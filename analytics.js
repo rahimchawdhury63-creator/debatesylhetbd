@@ -1,7 +1,7 @@
 // ======== GOOGLE SHEET + OPENSHEET SETUP ========
 const SHEET_ID = "1kgB_PttvCEMDlsMXkiO2jdsCpoe_BjBnpe674HcbnhQ";
-const PAGEVIEWS_API = `https://opensheet.elk.sh/${SHEET_ID}/PageViews`;
-const SEARCHES_API = `https://opensheet.elk.sh/${SHEET_ID}/Searches`;
+const PAGEVIEWS_API = `https://opensheet.elk.sh/1kgB_PttvCEMDlsMXkiO2jdsCpoe_BjBnpe674HcbnhQ/PageViews`;
+const SEARCHES_API = `https://opensheet.elk.sh/1kgB_PttvCEMDlsMXkiO2jdsCpoe_BjBnpe674HcbnhQ/Searches`;
 
 // ======== LOG PAGE VIEW ========
 async function logPageView() {
@@ -45,3 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   });
 });
+
