@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard - DebateSylhetBD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{font-family:Arial, sans-serif; background:#f4f6f8; margin:0; padding:0;}
+.container{max-width:1000px; margin:50px auto; background:#fff; padding:30px; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1);}
+h2{text-align:center; color:#0077ff; margin-bottom:20px;}
+input,button{width:100%; padding:12px; margin:8px 0; border-radius:6px; font-size:16px;}
+button{background:#0077ff; color:#fff; border:none; cursor:pointer; transition:0.3s;}
+button:hover{background:#0057d9;}
+#dashboard{display:none;}
+.card{background:#f9f9f9; padding:20px; margin:20px 0; border-radius:8px;}
+canvas{background:#fff; border-radius:8px; padding:10px;}
+table{width:100%; border-collapse:collapse;}
+th,td{padding:8px; text-align:left; border-bottom:1px solid #ddd;}
+th{background:#0077ff; color:white;}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div id="loginForm">
+<h2>Admin Login</h2>
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<p id="loginError" style="color:red; display:none;">Wrong login</p>
+</div>
+
+<div id="dashboard">
+<h2>Admin Analytics Dashboard</h2>
+
+<div class="card">
+<strong>Total Page Views:</strong> <span id="pageViews">Loading...</span>
+</div>
+
+<div class="card">
+<canvas id="pageViewsChart" height="150"></canvas>
+</div>
+
+<div class="card">
+<canvas id="topSearchChart" height="150"></canvas>
+</div>
+
+<div class="card">
+<h3>All Page Visits</h3>
+<table id="pageTable">
+<thead>
+<tr><th>Timestamp</th><th>Page</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+
+<div class="card">
+<h3>All Searches</h3>
+<table id="searchTable">
+<thead>
+<tr><th>Timestamp</th><th>Search Term</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+
+<button onclick="logout()">Logout</button>
+</div>
+</div>
+
+<script>
+// ===== ADMIN LOGIN =====
+const adminUser = "Rizwan";
+const adminPass = "RahimRahim";
+
+// ===== GOOGLE SHEET CONFIG =====
+const SHEET_ID = "1kgB_PttvCEMDlsMXkiO2jdsCpoe_BjBnpe674HcbnhQ";
+const PAGEVIEWS_URL = `https://opensheet.elk.sh/${SHEET_ID}/PageViews`;
+const SEARCHES_URL = `https://opensheet.elk.sh/${SHEET_ID}/Searches`;
+
+function login() {
+  const u = document.getElementById("username").value;
+  const p = document.getElementById("password").value;
+  if(u===adminUser && p===adminPass){
+    document.getElementById("loginForm").style.display="none";
+    document.getElementById("dashboard").style.display="block";
+    loadAnalytics();
+  } else {
+    document.getElementById("loginError").style.display="block";
+  }
+}
+
+function logout(){
+  document.getElementById("dashboard").style.display="none";
+  document.getElementById("loginForm").style.display="block";
+}
+
+// ===== LOAD ANALYTICS =====
+async function loadAnalytics(){
+  try {
+    // PAGE VIEWS
+    const res = await fetch(PAGEVIEWS_URL);
+    const pvData = await res.json();
+    document.getElementById("pageViews").textContent = pvData.length;
+
+    // Table of all page visits
+    const pageTableBody = document.querySelector("#pageTable tbody");
+    pageTableBody.innerHTML = "";
+    pvData.forEach(row=>{
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${row.Timestamp}</td><td>${row.Page}</td>`;
+      pageTableBody.appendChild(tr);
+    });
+
+    // Chart: Page Views Over Time
+    const dateCounts = {};
+    pvData.forEach(row=>{
+      const date = row.Timestamp.split("T")[0];
+      dateCounts[date] = (dateCounts[date]||0)+1;
+    });
+    const labels = Object.keys(dateCounts);
+    const counts = Object.values(dateCounts);
+    const ctx1 = document.getElementById("pageViewsChart").getContext("2d");
+    new Chart(ctx1,{
+      type:"line",
+      data:{
+        labels:labels,
+        datasets:[{
+          label:"Page Views",
+          data:counts,
+          borderColor:"#0077ff",
+          backgroundColor:"rgba(0,119,255,0.2)",
+          tension:0.3
+        }]
+      }
+    });
+
+  } catch(e){ console.error(e); }
+
+  try {
+    // SEARCHES
+    const res2 = await fetch(SEARCHES_URL);
+    const sData = await res2.json();
+
+    // Table of all searches
+    const searchTableBody = document.querySelector("#searchTable tbody");
+    searchTableBody.innerHTML = "";
+    sData.forEach(row=>{
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${row.Timestamp}</td><td>${row.SearchTerm}</td>`;
+      searchTableBody.appendChild(tr);
+    });
+
+    // Top search terms chart
+    const counts = {};
+    sData.forEach(r=>{
+      const term = r.SearchTerm || "";
+      if(term) counts[term] = (counts[term]||0)+1;
+    });
+    const topTerms = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,5);
+    const labels = topTerms.map(t=>t[0]);
+    const data = topTerms.map(t=>t[1]);
+    const ctx2 = document.getElementById("topSearchChart").getContext("2d");
+    new Chart(ctx2,{
+      type:"bar",
+      data:{
+        labels:labels,
+        datasets:[{
+          label:"Top Search Terms",
+          data:data,
+          backgroundColor:"#0077ff"
+        }]
+      }
+    });
+
+  } catch(e){ console.error(e); }
+}
+</script>
+</body>
+</html>
