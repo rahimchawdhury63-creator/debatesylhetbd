@@ -1,48 +1,38 @@
-// ======== GOOGLE SHEET + OPENSHEET SETUP ========
-const SHEET_ID = "1kgB_PttvCEMDlsMXkiO2jdsCpoe_BjBnpe674HcbnhQ";
-const PAGEVIEWS_API = `https://opensheet.elk.sh/1kgB_PttvCEMDlsMXkiO2jdsCpoe_BjBnpe674HcbnhQ/PageViews`;
-const SEARCHES_API = `https://opensheet.elk.sh/1kgB_PttvCEMDlsMXkiO2jdsCpoe_BjBnpe674HcbnhQ/Searches`;
+<div style="font-size:14px;color:#555;margin:10px 0;">
+  👁️ Total Views: <span id="views">Loading...</span>
+</div>
 
-// ======== LOG PAGE VIEW ========
-async function logPageView() {
-  try {
-    const timestamp = new Date().toISOString();
-    const page = window.location.pathname || "unknown";
-    const url = `${PAGEVIEWS_API}/add?Timestamp=${encodeURIComponent(timestamp)}&Page=${encodeURIComponent(page)}`;
-    fetch(url).catch(err => console.error("PageView log failed:", err));
-  } catch (err) {
-    console.error("PageView logging error:", err);
+<script>
+const SUPABASE_URL = "https://defnfoffergmmdxqqxuo.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlZm5mb2ZmZXJnbW1keHFxeHVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0Mzk2NTgsImV4cCI6MjA4NTAxNTY1OH0.E9g23aPuvRQ4j_luwRMqqQFixqncLxrNxDBish4Qv_s";
+
+// Get current count
+fetch(`${SUPABASE_URL}/rest/v1/views?id=eq.1`, {
+  headers: {
+    apikey: SUPABASE_KEY,
+    Authorization: `Bearer ${SUPABASE_KEY}`
   }
-}
-logPageView(); // Log page view automatically
-
-// ======== LOG SEARCH TERM ========
-function logSearchTerm(term) {
-  if (!term) return;
-  try {
-    const timestamp = new Date().toISOString();
-    const url = `${SEARCHES_API}/add?Timestamp=${encodeURIComponent(timestamp)}&SearchTerm=${encodeURIComponent(term)}`;
-    fetch(url).catch(err => console.error("Search log failed:", err));
-  } catch (err) {
-    console.error("Search log error:", err);
+})
+.then(res => res.json())
+.then(data => {
+  if (!data || data.length === 0) {
+    document.getElementById("views").innerText = "0";
+    return;
   }
-}
 
-// ======== AUTOMATIC SEARCH LOGGING (NO ENTER BUTTON NEEDED) ========
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("search");
-  if(!input) return;
+  const current = data[0].count || 0;
+  document.getElementById("views").innerText = current + 1;
 
-  let timeout;
-  input.addEventListener("input", () => {
-    clearTimeout(timeout);
-    const query = input.value.trim();
-    if(!query) return;
-
-    // Log search 1 second after user stops typing
-    timeout = setTimeout(() => {
-      logSearchTerm(query);
-    }, 1000);
+  // Update count (+1)
+  fetch(`${SUPABASE_URL}/rest/v1/views?id=eq.1`, {
+    method: "PATCH",
+    headers: {
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal"
+    },
+    body: JSON.stringify({ count: current + 1 })
   });
 });
-
+</script>
