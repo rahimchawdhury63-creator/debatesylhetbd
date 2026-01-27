@@ -2,116 +2,150 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Admin Dashboard | DebateSylhetBD</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Admin Dashboard | DebateSylhetBD admin login page debate sylhet bd</title>
+  admin login, admin panel, dashboard, website analytics, site stats, login page, secure login, admin access, user management, web dashboard, admin portal, control panel, website management, backend access, site monitoring, visitor stats, page analytics, traffic dashboard, site overview, admin control, website insights, user analytics, admin interface, control center, admin tools, website metrics, data dashboard, page views, search tracking, traffic monitoring, analytics dashboard, web stats, session tracking, visitor tracking, admin settings, backend dashboard, website control, online dashboard, stats panel, page analytics tool, admin reports, website performance, analytics tools, real-time analytics, visitor analytics, admin metrics, site reports, page tracking, web monitoring, admin overview
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-body{
-  font-family: Arial, sans-serif;
-  background:#f4f6f8;
-  margin:0;
-  padding:0;
-}
-.container{
-  max-width:400px;
-  margin:80px auto;
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-h2{text-align:center;color:#0077ff}
-input{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  font-size:16px;
-  border:2px solid #0077ff;
-  border-radius:8px;
-}
-button{
-  width:100%;
-  padding:12px;
-  background:#0077ff;
-  color:#fff;
-  font-size:16px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
-button:hover{background:#005fcc}
-.error{color:red;text-align:center;margin-top:10px}
-.dashboard{
-  display:none;
-  text-align:center;
-}
-.stat{
-  font-size:20px;
-  margin:20px 0;
-  padding:15px;
-  background:#eef5ff;
-  border-radius:10px;
-}
+body{font-family:Arial;background:#f4f6f8;margin:0;padding:20px;}
+.box{max-width:400px;margin:50px auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+input,button{width:100%;padding:12px;margin:10px 0;font-size:16px;border-radius:8px;}
+input{border:2px solid #0077ff;}
+button{border:none;background:#0077ff;color:#fff;cursor:pointer;}
+button:hover{background:#005fcc;}
+.error{text-align:center;color:red;}
+.dashboard{display:none;max-width:900px;margin:30px auto;}
+.card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.1);margin-bottom:20px;}
+.stat{text-align:center;font-size:28px;font-weight:bold;margin-bottom:10px;}
+canvas{background:#f9f9f9;border-radius:8px;padding:10px;}
 </style>
 </head>
-
 <body>
 
-<div class="container" id="loginBox">
+<!-- LOGIN -->
+<div class="box" id="loginBox">
   <h2>Admin Login</h2>
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
+  <input id="user" placeholder="Username">
+  <input id="pass" type="password" placeholder="Password">
   <button onclick="login()">Login</button>
-  <div class="error" id="error"></div>
+  <div class="error" id="err"></div>
 </div>
 
-<div class="container dashboard" id="dashboard">
-  <h2>Analytics Dashboard</h2>
-  <div class="stat">
-    👁️ Total Website Views  
-    <div style="font-size:32px;font-weight:bold" id="views">Loading...</div>
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
+  <div class="card">
+    <h3>Total Views</h3>
+    <div class="stat" id="totalViews">0</div>
+    <canvas id="viewsChart"></canvas>
   </div>
+
+  <div class="card">
+    <h3>Per-Page Views</h3>
+    <canvas id="pageChart"></canvas>
+  </div>
+
+  <div class="card">
+    <h3>Top Searches</h3>
+    <canvas id="searchChart"></canvas>
+  </div>
+
 </div>
 
 <script>
-// ===== ADMIN LOGIN =====
+// ================= LOGIN =================
 const ADMIN_USER = "Rizwan";
 const ADMIN_PASS = "RahimRahim";
 
 function login(){
-  const u = document.getElementById("username").value;
-  const p = document.getElementById("password").value;
-
-  if(u === ADMIN_USER && p === ADMIN_PASS){
+  if(document.getElementById("user").value===ADMIN_USER &&
+     document.getElementById("pass").value===ADMIN_PASS){
     document.getElementById("loginBox").style.display="none";
     document.getElementById("dashboard").style.display="block";
-    loadViews();
-    setInterval(loadViews, 10000); // auto refresh every 10 sec
-  }else{
-    document.getElementById("error").innerText = "Wrong username or password";
+    loadAnalytics();
+    setInterval(loadAnalytics,10000); // live update every 10s
+  } else {
+    document.getElementById("err").innerText="Wrong login!";
   }
 }
 
-// ===== SUPABASE CONFIG =====
+// ================= SUPABASE =================
 const SUPABASE_URL = "https://defnfoffergmmdxqqxuo.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlZm5mb2ZmZXJnbW1keHFxeHVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0Mzk2NTgsImV4cCI6MjA4NTAxNTY1OH0.E9g23aPuvRQ4j_luwRMqqQFixqncLxrNxDBish4Qv_s";
 
-// ===== LOAD VIEWS =====
-function loadViews(){
-  fetch(`${SUPABASE_URL}/rest/v1/views?id=eq.1`, {
-    headers:{
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`
-    }
+// ================= LOAD ANALYTICS =================
+function loadAnalytics(){
+  loadTotalViews();
+  loadPageViews();
+  loadSearches();
+}
+
+// -------- TOTAL VIEWS --------
+function loadTotalViews(){
+  fetch(`${SUPABASE_URL}/rest/v1/views?id=eq.1`,{
+    headers:{apikey:SUPABASE_KEY,Authorization:`Bearer ${SUPABASE_KEY}`}
   })
-  .then(res => res.json())
-  .then(data => {
-    if(data && data.length > 0){
-      document.getElementById("views").innerText = data[0].count;
-    }
+  .then(r=>r.json())
+  .then(d=>{
+    const total = d[0]?.count||0;
+    document.getElementById("totalViews").innerText=total;
+
+    new Chart(document.getElementById("viewsChart"),{
+      type:"line",
+      data:{
+        labels:["Views"],
+        datasets:[{label:"Total Views",data:[total],borderColor:"#0077ff",fill:false}]
+      },
+      options:{responsive:true,plugins:{legend:{display:false}}}
+    });
+  });
+}
+
+// -------- PER PAGE VIEWS --------
+function loadPageViews(){
+  // This is just example: counting visits per page from searches table
+  fetch(`${SUPABASE_URL}/rest/v1/searches`,{
+    headers:{apikey:SUPABASE_KEY,Authorization:`Bearer ${SUPABASE_KEY}`}
+  })
+  .then(r=>r.json())
+  .then(rows=>{
+    const pageCount={};
+    rows.forEach(r=>pageCount[r.page]=(pageCount[r.page]||0)+1);
+    const labels=Object.keys(pageCount);
+    const data=labels.map(l=>pageCount[l]);
+
+    new Chart(document.getElementById("pageChart"),{
+      type:"bar",
+      data:{
+        labels:labels,
+        datasets:[{label:"Visits per Page",data:data,backgroundColor:"#0077ff"}]
+      },
+      options:{responsive:true,plugins:{legend:{display:false}}}
+    });
+  });
+}
+
+// -------- TOP SEARCHES --------
+function loadSearches(){
+  fetch(`${SUPABASE_URL}/rest/v1/searches`,{
+    headers:{apikey:SUPABASE_KEY,Authorization:`Bearer ${SUPABASE_KEY}`}
+  })
+  .then(r=>r.json())
+  .then(rows=>{
+    const count={};
+    rows.forEach(r=>count[r.keyword]=(count[r.keyword]||0)+1);
+    const labels=Object.keys(count).slice(0,10);
+    const data=labels.map(k=>count[k]);
+
+    new Chart(document.getElementById("searchChart"),{
+      type:"bar",
+      data:{labels:labels,datasets:[{label:"Searches",data:data,backgroundColor:"#0077ff"}]},
+      options:{responsive:true,plugins:{legend:{display:false}}}
+    });
   });
 }
 </script>
 
 </body>
 </html>
+
