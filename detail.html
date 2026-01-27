@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debate Topic Details - DebateSylhetBD</title>
+<meta name="description" content="DebateSylhetBD – সমস্ত বাংলা ও ইংরেজি ডিবেট টপিকের বিস্তারিত। শিক্ষার্থীরা সহজেই 1000+ টপিকের বিস্তারিত পড়ে প্রস্তুতি নিতে পারে।">
+<meta name="keywords" content="বাংলা ডিবেট, debate topics, Bangladesh debate, শিক্ষার্থীদের জন্য বিতর্ক, debate preparation, শিক্ষামূলক বিতর্ক, আন্তর্জাতিক ডিবেট, স্কুল ডিবেট, কলেজ ডিবেট, English debate, technology debate, politics debate, environment debate, society debate, ICT debate, history of Bangladesh, online debate, debate tips, debate ideas, debate guide, debate knowledge, debate preparation, competitive debate, debate questions, debate answers, debate skills, debate strategy, debate examples, debate practice, debate points, debate important topics, debate content, debate worksheet, debate reading, debate reference, debate education, debate tutorial, debate lesson, debate topic detail, debate sample questions, debate research topic, debate current affairs, debate students, debate discussion, debate paragraph, debate notes, debate info, debate resource, debate material, debate notes Bengali, debate notes English">
+<style>
+body{font-family:'Roboto',sans-serif;background:#f5f5f5;color:#222;margin:0;padding:0;}
+.container{max-width:900px;margin:20px auto;padding:20px;background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+.topic{padding:15px;border-bottom:1px solid #ddd;border-radius:8px;margin-bottom:10px;background:#f9f9f9;}
+.topic h3{margin:0;color:#0077ff;}
+.topic.highlight{background:#eef6ff;border-left:4px solid #0077ff;padding-left:10px;}
+#search{width:100%;padding:12px;font-size:16px;margin-bottom:20px;border:2px solid #0077ff;border-radius:8px;}
+.back{display:inline-block;margin-top:20px;text-decoration:none;color:#0077ff;font-weight:bold;}
+#pagination{display:flex;justify-content:center;align-items:center;margin-top:20px;gap:10px;}
+#pagination button{padding:8px 16px;border:none;background:#0077ff;color:#fff;border-radius:5px;cursor:pointer;}
+#pagination button:disabled{background:#aaa;cursor:default;}
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="debate.html" class="back">← সব টপিকে ফিরে যান</a>
+  <input type="text" id="search" placeholder="🔍 টপিক খুঁজুন...">
+  <div id="topics"></div>
+  <div id="pagination">
+    <button id="prev">Prev</button>
+    <span id="page-info"></span>
+    <button id="next">Next</button>
+  </div>
+</div>
+
+<script>
+// OpenSheet URL for your detail sheet
+const SHEET_URL = "https://opensheet.elk.sh/1u8tH7Qz3EEYydEVdr_p1rwyKMl26RueoFCn4QbAgEHE/Bangladebatetopics";
+
+// Get clicked topic title from URL
+const params = new URLSearchParams(window.location.search);
+const clickedTitle = params.get("title");
+
+let data = [];
+let filteredData = [];
+let currentPage = 1;
+const pageSize = 20;
+
+const container = document.getElementById("topics");
+const searchInput = document.getElementById("search");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const pageInfo = document.getElementById("page-info");
+
+function renderPage() {
+  container.innerHTML = "";
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  const pageData = filteredData.slice(start, end);
+
+  pageData.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "topic";
+    div.dataset.title = item.title;
+    div.innerHTML = `<h3>${item.title}</h3><p>${item.detail}</p>`;
+    container.appendChild(div);
+
+    // Scroll to clicked topic
+    if(item.title === clickedTitle){
+      div.classList.add("highlight");
+      setTimeout(()=>{div.scrollIntoView({behavior:"smooth",block:"start"});},300);
+    }
+  });
+
+  const totalPages = Math.ceil(filteredData.length / pageSize);
+  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+}
+
+// Fetch data from Google Sheet
+fetch(SHEET_URL)
+  .then(res => res.json())
+  .then(json => {
+    data = json;
+    filteredData = data;
+    renderPage();
+  })
+  .catch(err => {
+    console.error(err);
+    container.innerHTML = "⚠️ ডিটেইল লোড করা যায়নি";
+  });
+
+// Pagination
+prevBtn.addEventListener("click",()=>{if(currentPage>1){currentPage--;renderPage();}});
+nextBtn.addEventListener("click",()=>{const totalPages=Math.ceil(filteredData.length/pageSize);if(currentPage<totalPages){currentPage++;renderPage();}});
+
+// Search system
+searchInput.addEventListener("input",()=>{
+  const q = searchInput.value.toLowerCase();
+  filteredData = data.filter(item => item.title.toLowerCase().includes(q));
+  currentPage = 1;
+  renderPage();
+});
+</script>
+</body>
+</html>
