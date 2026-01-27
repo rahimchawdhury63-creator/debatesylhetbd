@@ -179,15 +179,24 @@ fetch("https://opensheet.elk.sh/1DqRN0JH3mKXQCs70FwKTCOobBKzX-vVkPLGQoRHWjok/Ban
       const pageData = filteredData.slice(start, end);
 
       pageData.forEach(item => {
-        const div = document.createElement("div");
-        div.style.padding = "12px";
-        div.style.margin = "8px 0";
-        div.style.border = "1px solid #ddd";
-        div.style.borderRadius = "8px";
-        div.style.background = "#f9f9f9";
-        div.textContent = item.title;
-        container.appendChild(div);
-      });
+  const div = document.createElement("div");
+  div.style.padding = "12px";
+  div.style.margin = "8px 0";
+  div.style.border = "1px solid #ddd";
+  div.style.borderRadius = "8px";
+  div.style.background = "#f9f9f9";
+  div.style.cursor = "pointer";
+
+  div.textContent = item.title;
+
+  // 👉 CLICK ACTION
+  div.onclick = () => {
+    window.location.href =
+      "detail.html?title=" + encodeURIComponent(item.title);
+  };
+
+  container.appendChild(div);
+});
 
       // Update page numbers
       const totalPages = Math.ceil(filteredData.length / pageSize);
@@ -225,6 +234,7 @@ fetch("https://opensheet.elk.sh/1DqRN0JH3mKXQCs70FwKTCOobBKzX-vVkPLGQoRHWjok/Ban
 
 
 </html>
+
 
 
 
