@@ -32,7 +32,7 @@
     <link rel="canonical" href="https://debatesylhetbd.onrender.com/">
     <meta name="robots" content="index, follow">
 <meta name="description" content="DebateSylhetBD: বাংলা বিতর্ক বিষয় ও বাংলাদেশের ইতিহাসের গুরুত্বপূর্ণ টপিক। শিক্ষামূলক আলোচনা, debate topics, history insights, student debates | debate sylhet bd.">
-<meta name="keywords" content="bangla debate topics,bangla desh history in bangla,Bangladesh history debate,Bangladesh student debate,Debate website in Bangladesh,bangla debate topic,free debate topics, Bangladesh topic, Bangladesh,
+<meta name="keywords" content="debate sylhet bd,bangla debate topics,bangla desh history in bangla,Bangladesh history debate,Bangladesh student debate,Debate website in Bangladesh,bangla debate topic,free debate topics, Bangladesh topic, Bangladesh,
     topic Bangladesh,debate, history Bangladesh,
 bangla debate topics for students,debate sylhet bd, বিতর্ক কি?,what is debate? , how to prepare for debate competition? ,
 school debate topic bangla
@@ -70,7 +70,7 @@ debate topic in bangla
 
     <!-- Corner logo -->
     <div class="corner-logo">
-        <img src="logo.png" alt="বিতর্ক বাংলা">
+        <img src="logo.png" alt="বিতর্ক বাংলা"> <a href="admin.html" class="admin-btn">Admin Dashboard</a>
     </div>
 
 
@@ -78,7 +78,6 @@ debate topic in bangla
     <div class="container">
         <h1>বিতর্ক বাংলা</h1>
         <p>বাংলাদেশ এবং বিশ্ব বিষয়ক বিতর্কের আইডিয়া।</p>
-        <a href="admin.html" class="admin-btn">Admin Dashboard</a>
         <a href="debate.html" class="btn">বিতর্কের বিষয় দেখুন</a>
          <a href="history.html" class="btn btn-history">বাংলাদেশের ইতিহাস দেখুন</a>
          <a href="post.html" class="btn">নতুন পোস্ট পড়ুন</a>
@@ -340,48 +339,12 @@ is a Bangla debate topic website for students in Sylhet, Bangladesh.
     
         
     </div>
-    <div style="font-size:14px;color:#555;margin:10px 0;">
-  👁️ Total Views: <span id="views">Loading...</span>
-</div>
-
-<script>
-const SUPABASE_URL = "https://defnfoffergmmdxqqxuo.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlZm5mb2ZmZXJnbW1keHFxeHVvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0Mzk2NTgsImV4cCI6MjA4NTAxNTY1OH0.E9g23aPuvRQ4j_luwRMqqQFixqncLxrNxDBish4Qv_s";
-
-// Get current count
-fetch(`${SUPABASE_URL}/rest/v1/views?id=eq.1`, {
-  headers: {
-    apikey: SUPABASE_KEY,
-    Authorization: `Bearer ${SUPABASE_KEY}`
-  }
-})
-.then(res => res.json())
-.then(data => {
-  if (!data || data.length === 0) {
-    document.getElementById("views").innerText = "0";
-    return;
-  }
-
-  const current = data[0].count || 0;
-  document.getElementById("views").innerText = current + 1;
-
-  // Update count (+1)
-  fetch(`${SUPABASE_URL}/rest/v1/views?id=eq.1`, {
-    method: "PATCH",
-    headers: {
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`,
-      "Content-Type": "application/json",
-      Prefer: "return=minimal"
-    },
-    body: JSON.stringify({ count: current + 1 })
-  });
-});
-</script>
+    
 <script src="analytics.js"></script>
 </body>
 
 </html>
+
 
 
 
