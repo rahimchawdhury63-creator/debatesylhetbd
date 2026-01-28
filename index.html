@@ -49,7 +49,7 @@ debate topic in bangla
 <meta property="og:title" content="debatesylhetbd | বিতর্ক বাংলা">
 <meta property="og:description" content="বাংলাদেশ ও আন্তর্জাতিক বিষয়ক শিক্ষামূলক বিতর্ক ও মত প্রকাশের ওয়েবসাইট।">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://debatesylhetbd.onrender.com">
+<mea property="og:url" content="https://debatesylhetbd.onrender.com">
 <meta property="og:image" content="https://https://debatesylhetbd.onrender.com/logo.png">
 
 <!-- Twitter -->
@@ -74,83 +74,13 @@ body{top:0!important;}
     </style>
 </head>
 <body>
-    <div style="max-width:1200px;margin:20px auto;display:flex;align-items:center;justify-content:flex-end;gap:10px;font-family:Roboto, sans-serif;">
-  <label for="lang-select-top" style="font-weight:bold;color:#0077ff;">🌐 Language:</label>
-  <input type="text" id="lang-search-top" placeholder="Search language..." style="padding:6px 10px;border:1px solid #0077ff;border-radius:6px;font-size:14px;">
-  <select id="lang-select-top" style="padding:6px 10px;border-radius:6px;border:1px solid #0077ff;font-size:14px;cursor:pointer;">
-    <option value="">Select Language</option>
-    <option value="bn">বাংলা</option>
-    <option value="en">English</option>
-    <option value="hi">Hindi</option>
-    <option value="ar">Arabic</option>
-    <option value="fr">French</option>
-    <option value="es">Spanish</option>
-    <option value="de">German</option>
-    <option value="it">Italian</option>
-    <option value="ja">Japanese</option>
-    <option value="ru">Russian</option>
-    <option value="ko">Korean</option>
-    <option value="zh-CN">Chinese (Simplified)</option>
-    <option value="zh-TW">Chinese (Traditional)</option>
-    <option value="pt">Portuguese</option>
-    <option value="tr">Turkish</option>
-    <option value="sv">Swedish</option>
-    <option value="nl">Dutch</option>
-    <option value="pl">Polish</option>
-    <option value="vi">Vietnamese</option>
-    <option value="th">Thai</option>
-    <option value="id">Indonesian</option>
-    <option value="ms">Malay</option>
-    <option value="ta">Tamil</option>
-    <option value="te">Telugu</option>
-    <option value="kn">Kannada</option>
-    <option value="ml">Malayalam</option>
-    <option value="mr">Marathi</option>
-    <option value="gu">Gujarati</option>
-    <option value="pa">Punjabi</option>
-    <option value="or">Odia</option>
-    <option value="si">Sinhala</option>
-    <option value="ne">Nepali</option>
-    <option value="bg">Bulgarian</option>
-    <option value="ro">Romanian</option>
-    <option value="hu">Hungarian</option>
-    <option value="cs">Czech</option>
-    <option value="sk">Slovak</option>
-    <option value="sl">Slovenian</option>
-    <option value="hr">Croatian</option>
-    <option value="sr">Serbian</option>
-    <option value="mk">Macedonian</option>
-    <option value="et">Estonian</option>
-    <option value="lv">Latvian</option>
-    <option value="lt">Lithuanian</option>
-    <option value="af">Afrikaans</option>
-    <option value="sw">Swahili</option>
-    <option value="zu">Zulu</option>
-    <option value="xh">Xhosa</option>
-    <option value="yo">Yoruba</option>
-    <option value="ig">Igbo</option>
-    <option value="ha">Hausa</option>
-    <option value="am">Amharic</option>
-    <option value="mn">Mongolian</option>
-    <option value="ky">Kyrgyz</option>
-    <option value="uz">Uzbek</option>
-    <option value="tk">Turkmen</option>
-    <option value="kk">Kazakh</option>
-    <option value="lb">Luxembourgish</option>
-    <option value="mt">Maltese</option>
-    <option value="ga">Irish</option>
-    <option value="is">Icelandic</option>
-    <option value="sw">Swahili</option>
-    <option value="hmn">Hmong</option>
-    <option value="jw">Javanese</option>
-    <option value="la">Latin</option>
-    <option value="lo">Lao</option>
-    <option value="my">Myanmar (Burmese)</option>
-    <option value="si">Sinhala</option>
-    <option value="uz">Uzbek</option>
-    <!-- Add more languages here if needed -->
-  </select>
-    </div>
+    <!-- Elfsight Professional Website Translator for DebateSylhetBD -->
+<div style="position:fixed; top:20px; right:20px; z-index:9999;">
+  <div class="elfsight-app-c40d8790-8dfd-4a83-b736-2d458a6d5379" data-elfsight-app-lazy></div>
+</div>
+
+<script src="https://elfsightcdn.com/platform.js" async></script>
+    
 
     <!-- Watermark -->
     <div class="watermark">
@@ -414,55 +344,11 @@ is a Bangla debate topic website for students in Sylhet, Bangladesh.
     </div>
     
 <script src="analytics.js"></script>
-    <script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'bn', includedLanguages:'bn,en,hi,ar,fr,es,de,it,ja,ru,ko,zh-CN,zh-TW,pt,tr,sv,nl,pl,vi,th,id,ms,ta,te,kn,ml,mr,gu,pa,or,si,ne,bg,ro,hu,cs,sk,sl,hr,sr,mk,et,lv,lt,af,sw,zu,xh,yo,ig,ha,am,mn,ky,uz,tk,kk,lb,mt,ga,is,sw,hmn,jw,la,lo,my,si,uz', autoDisplay:false},
-    'google_translate_element'
-  );
-
-  const savedLang = localStorage.getItem("site_lang");
-  if(savedLang) setTimeout(()=>setLanguage(savedLang),800);
-}
-
-// Set language
-function setLanguage(lang){
-  if(!lang) return;
-  localStorage.setItem("site_lang", lang);
-  const select = document.querySelector("select.goog-te-combo");
-  if(!select) return;
-  select.value = lang;
-  select.dispatchEvent(new Event("change"));
-}
-
-// Auto-detect browser language
-const userLang = navigator.language || navigator.userLanguage;
-const autoLang = userLang.split('-')[0];
-setTimeout(()=>{
-  const selectTop = document.getElementById('lang-select-top');
-  const optionExists = [...selectTop.options].some(o=>o.value===autoLang);
-  if(optionExists) setLanguage(autoLang);
-},500);
-
-// Dropdown change
-document.getElementById('lang-select-top').addEventListener('change', function(){
-  setLanguage(this.value);
-});
-
-// Search system
-document.getElementById('lang-search-top').addEventListener('input', function(){
-  const val = this.value.toLowerCase();
-  const options = document.querySelectorAll('#lang-select-top option');
-  options.forEach(o=>{
-    o.style.display = o.textContent.toLowerCase().includes(val) ? "block" : "none";
-  });
-});
-</script>
-
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
 </body>
 
 </html>
+
 
 
 
