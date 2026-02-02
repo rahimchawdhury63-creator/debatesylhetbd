@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DebateSylhetBD Environmental Hub - Learn about global pollution, climate change, global warming effects, and eco-friendly solutions. Join us in protecting our planet.">
+  <meta name="keywords" content="global pollution, climate change, global warming effects, eco-friendly solutions, environmental problems, renewable energy, sustainability">
+  <title>DebateSylhetBD Environmental Hub - Global Pollution &amp; Climate Change Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-blue: #0066FF;
+      --accent-red: #FF3D3D;
+      --accent-orange: #FF8C00;
+      --dark-bg: #0A0A0F;
+      --light-text: #FFFFFF;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--dark-bg);
+      color: var(--light-text);
+      overflow-x: hidden;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #0066FF, #00D4FF, #FF8C00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+    }
+    
+    .nav-link {
+      position: relative;
+      padding: 8px 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #0066FF, #FF8C00);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 80%;
+    }
+    
+    .hero-earth {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+    
+    .earth-sphere {
+      position: absolute;
+      inset: 10%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a5f2a 0%, #0d3d6e 30%, #2d8f4e 50%, #1e3a5f 70%, #0a2540 100%);
+      box-shadow: 
+        inset -30px -30px 60px rgba(0,0,0,0.6),
+        inset 30px 30px 60px rgba(255,255,255,0.1),
+        0 0 100px rgba(0, 102, 255, 0.3),
+        0 0 200px rgba(0, 102, 255, 0.1);
+      animation: rotate 30s linear infinite;
+      overflow: hidden;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .pollution-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: 
+        radial-gradient(ellipse at 30% 40%, rgba(139, 69, 19, 0.4) 0%, transparent 30%),
+        radial-gradient(ellipse at 70% 60%, rgba(100, 100, 100, 0.5) 0%, transparent 25%),
+        radial-gradient(ellipse at 20% 70%, rgba(255, 140, 0, 0.3) 0%, transparent 20%),
+        radial-gradient(ellipse at 80% 30%, rgba(255, 61, 61, 0.3) 0%, transparent 20%);
+      animation: smog 8s ease-in-out infinite alternate;
+    }
+    
+    @keyframes smog {
+      0% { opacity: 0.6; transform: scale(1); }
+      100% { opacity: 0.9; transform: scale(1.05); }
+    }
+    
+    .ice-cap {
+      position: absolute;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(200,230,255,0.6) 100%);
+      border-radius: 50%;
+      animation: melt 4s ease-in-out infinite alternate;
+    }
+    
+    .ice-cap.north {
+      top: 5%;
+      left: 30%;
+      width: 40%;
+      height: 15%;
+    }
+    
+    .ice-cap.south {
+      bottom: 5%;
+      left: 25%;
+      width: 50%;
+      height: 12%;
+    }
+    
+    @keyframes melt {
+      0% { transform: scale(1); opacity: 0.9; }
+      100% { transform: scale(0.85); opacity: 0.6; }
+    }
+    
+    .renewable-icon {
+      position: absolute;
+      font-size: 24px;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .solar-panel {
+      top: 20%;
+      right: 5%;
+      animation-delay: 0s;
+    }
+    
+    .wind-turbine {
+      bottom: 30%;
+      left: 5%;
+      animation-delay: 1s;
+    }
+    
+    .leaf-icon {
+      top: 50%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+    
+    .cta-button {
+      background: linear-gradient(135deg, #0066FF, #00D4FF);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 40px rgba(0, 102, 255, 0.4);
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      color: white;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 50px rgba(0, 102, 255, 0.6);
+    }
+    
+    .section-card {
+      background: linear-gradient(145deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 32px;
+      padding: 48px;
+      margin-bottom: 40px;
+      transition: all 0.4s ease;
+    }
+    
+    .section-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 102, 255, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 102, 255, 0.15);
+    }
+    
+    .section-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin-bottom: 24px;
+    }
+    
+    .blog-card {
+      background: linear-gradient(145deg, rgba(25, 25, 35, 0.9), rgba(15, 15, 25, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .blog-thumbnail {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .blog-thumbnail::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(255, 140, 0, 0.2));
+    }
+    
+    .tag {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      display: inline-block;
+      margin: 4px;
+    }
+    
+    .footer-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%230A0A0F' d='M0,50 C360,100 720,0 1080,50 C1260,75 1350,25 1440,50 L1440,0 L0,0 Z'/%3E%3C/svg%3E") no-repeat;
+      background-size: cover;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 32px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(0, 102, 255, 0.1), rgba(0, 212, 255, 0.05));
+      border: 1px solid rgba(0, 102, 255, 0.2);
+    }
+    
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FF8C00, #FF3D3D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .mobile-menu {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .desktop-nav {
+        display: none;
+      }
+      .mobile-menu {
+        display: block;
+      }
+      .section-card {
+        padding: 24px;
+      }
+      .hero-earth {
+        max-width: 350px;
+      }
+    }
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-20px); }
+      60% { transform: translateX(-50%) translateY(-10px); }
+    }
+    
+    .glow-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #0066FF, #00D4FF, #FF8C00, transparent);
+      margin: 60px 0;
+    }
+    
+    .content-text {
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    
+    .content-text p {
+      margin-bottom: 16px;
+    }
+    
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(0, 102, 255, 0.15), rgba(255, 140, 0, 0.1));
+      border-left: 4px solid #0066FF;
+      padding: 24px;
+      border-radius: 0 16px 16px 0;
+      margin: 24px 0;
+    }
+    
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-size: 20px;
+    }
+    
+    .social-icon:hover {
+      background: linear-gradient(135deg, #0066FF, #00D4FF);
+      transform: translateY(-3px);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full h-full overflow-auto"><!-- Header Navigation -->
+   <header class="fixed top-0 left-0 right-0 z-50 glass-card" style="border-radius: 0 0 24px 24px;">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+     <div class="flex items-center justify-between"><!-- Logo --> <a href="#home" class="flex items-center gap-3">
+       <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-content-center" style="display: flex; align-items: center; justify-content: center;"><span class="text-2xl">🌍</span>
+       </div>
+       <div>
+        <h1 id="site-title" class="text-lg font-bold gradient-text">DebateSylhetBD</h1>
+        <p class="text-xs text-gray-400">Environmental Hub</p>
+       </div></a> <!-- Desktop Navigation -->
+      <nav class="desktop-nav flex items-center gap-2"><a href="#home" class="nav-link text-white">Home</a> <a href="#about" class="nav-link text-white">About</a> <a href="#blog" class="nav-link text-white">Blog</a> <a href="#resources" class="nav-link text-white">Resources</a> <a href="#contact" class="nav-link text-white">Contact</a>
+      </nav><!-- Mobile Menu Button --> <button class="mobile-menu text-white text-2xl" onclick="toggleMobileNav()" aria-label="Toggle mobile menu">☰</button>
+     </div><!-- Mobile Navigation -->
+     <nav id="mobile-nav" class="hidden mt-4 pb-4 border-t border-white/10 pt-4">
+      <div class="flex flex-col gap-3">
+  <a href="index.html"
+     class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded text-center"
+     onclick="toggleMobileNav()">
+     Home
+  </a>
+
+  <a href="post.html"
+     class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded text-center"
+     onclick="toggleMobileNav()">
+     Posts
+  </a>
+
+  <a href="debate.html"
+     class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded text-center"
+     onclick="toggleMobileNav()">
+     Debate
+  </a>
+
+  <a href="history.html"
+     class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded text-center"
+     onclick="toggleMobileNav()">
+     History
+  </a>
+</div>
+      </div>
+     </nav>
+    </div>
+   </header><!-- Hero Section -->
+   <section id="home" class="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden"><!-- Background Effects -->
+    <div class="absolute inset-0 overflow-hidden">
+     <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+     <div class="absolute bottom-20 right-10 w-80 h-80 bg-orange-500/15 rounded-full blur-3xl"></div>
+     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-blue-900/20 to-transparent"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+     <div class="grid lg:grid-cols-2 gap-12 items-center"><!-- Hero Content -->
+      <div class="text-center lg:text-left">
+       <div class="inline-block px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 text-sm font-medium mb-6">
+        🌱 Join the Movement for a Greener Future
+       </div>
+       <h1 id="hero-headline" class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"><span class="gradient-text">Protect Our Planet</span><br><span class="text-white">For Future Generations</span></h1>
+       
+       <a href="index.html" class="rgb-btn">🏠 Home</a>
+
+<style>
+/* ===== 3D RGB BUTTON ===== */
+.rgb-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 14px;
+  background: linear-gradient(45deg, red, blue, green, magenta, cyan, orange);
+  background-size: 600% 600%;
+  animation: rgbShift 6s linear infinite;
+  box-shadow:
+    0 6px 0 rgba(0,0,0,0.35),
+    0 12px 25px rgba(0,0,0,0.35);
+  transform: translateY(0);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover = deeper 3D */
+.rgb-btn:hover {
+  transform: translateY(3px);
+  box-shadow:
+    0 3px 0 rgba(0,0,0,0.4),
+    0 8px 18px rgba(0,0,0,0.45);
+}
+
+/* Click = press effect */
+.rgb-btn:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.5),
+    0 4px 10px rgba(0,0,0,0.6);
+}
+
+/* Infinite RGB animation */
+@keyframes rgbShift {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
+}
+</style>
+       
+       <p id="hero-subheadline" class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">Discover the truth about global pollution, climate change, and environmental degradation. Learn eco-friendly solutions and join millions fighting for a sustainable world.</p>
+       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"><a href="#about" id="cta-button" class="cta-button text-center">Learn More</a> <a href="#resources" class="px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-all text-center"> Explore Resources </a>
+       </div><!-- Stats -->
+       <div class="grid grid-cols-3 gap-4 mt-12">
+        <div class="text-center">
+         <div class="text-2xl md:text-3xl font-bold text-orange-400">
+          8M+
+         </div>
+         <div class="text-xs text-gray-400">
+          Deaths from Pollution/Year
+         </div>
+        </div>
+        <div class="text-center">
+         <div class="text-2xl md:text-3xl font-bold text-red-400">
+          1.1°C
+         </div>
+         <div class="text-xs text-gray-400">
+          Global Temp Rise
+         </div>
+        </div>
+        <div class="text-center">
+         <div class="text-2xl md:text-3xl font-bold text-blue-400">
+          26%
+         </div>
+         <div class="text-xs text-gray-400">
+          Ocean Plastic by 2050
+         </div>
+        </div>
+       </div>
+      </div><!-- 3D Earth Illustration -->
+      <div class="hero-earth"><!-- Main Earth Sphere -->
+       <div class="earth-sphere">
+        <div class="pollution-overlay"></div>
+        <div class="ice-cap north"></div>
+        <div class="ice-cap south"></div><!-- Continent hints -->
+        <div class="absolute top-1/4 left-1/4 w-1/3 h-1/4 bg-green-800/40 rounded-full blur-sm"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-1/4 h-1/5 bg-green-700/30 rounded-full blur-sm"></div>
+       </div><!-- Floating Renewable Icons -->
+       <div class="renewable-icon solar-panel">
+        ☀️
+       </div>
+       <div class="renewable-icon wind-turbine">
+        🌬️
+       </div>
+       <div class="renewable-icon leaf-icon">
+        🌿
+       </div><!-- Orbiting Elements -->
+       <div class="absolute inset-0 animate-spin" style="animation-duration: 20s;">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 text-2xl">
+         🛰️
+        </div>
+       </div><!-- Pollution Indicators -->
+       <div class="absolute top-1/4 left-1/4 w-3 h-3 bg-gray-500 rounded-full animate-pulse opacity-60"></div>
+       <div class="absolute top-1/3 right-1/3 w-4 h-4 bg-orange-600 rounded-full animate-pulse opacity-50"></div>
+       <div class="absolute bottom-1/3 left-1/3 w-3 h-3 bg-red-500 rounded-full animate-pulse opacity-40"></div>
+      </div>
+     </div>
+    </div><!-- Scroll Indicator -->
+    <div class="scroll-indicator text-white/60 flex flex-col items-center gap-2"><span class="text-sm">Scroll to Explore</span> <span class="text-2xl">↓</span>
+    </div>
+   </section>
+   <div class="glow-line max-w-4xl mx-auto"></div><!-- About / What is Global Pollution Section -->
+   <section id="about" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="section-card">
+      <div class="section-icon bg-gradient-to-br from-gray-600 to-gray-800">
+       🏭
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="gradient-text">What is Global Pollution?</span></h2>
+      <h3 class="text-xl text-orange-400 font-semibold mb-4">Understanding the Environmental Crisis That Threatens Our World</h3>
+      <div class="content-text">
+       <p>Global pollution represents one of the most pressing environmental challenges facing humanity in the 21st century. It encompasses the contamination of Earth's natural systems—air, water, soil, and ecosystems—through the introduction of harmful substances and energy forms that disrupt the delicate balance of our planet. From the smog-filled skies over major industrial cities to the plastic-choked waters of our oceans, pollution has become an inescapable reality affecting every corner of the globe.</p>
+       <p>The scale of global pollution is staggering. According to the World Health Organization, approximately 99% of the global population breathes air that exceeds WHO guideline limits for pollutants. Air pollution alone causes an estimated 7 million premature deaths annually, making it one of the leading environmental risk factors for mortality worldwide. This silent killer penetrates our homes, schools, and workplaces, affecting respiratory health, cardiovascular systems, and even cognitive development in children.</p>
+       <div class="highlight-box"><strong class="text-blue-400">Key Fact:</strong> Every year, approximately 8 million metric tons of plastic waste enters our oceans, equivalent to dumping a garbage truck full of plastic into the sea every minute. This plastic pollution threatens marine life, contaminates the food chain, and persists in the environment for hundreds of years.
+       </div>
+       <p>Water pollution presents equally alarming statistics. Over 2 billion people worldwide lack access to safely managed drinking water services, while industrial discharge, agricultural runoff, and inadequate sewage treatment continue to degrade freshwater sources. Rivers like the Ganges, Yangtze, and Mississippi carry billions of tons of pollutants to the oceans each year, creating vast dead zones where marine life cannot survive. The Great Pacific Garbage Patch, a floating mass of plastic debris, now covers an area twice the size of Texas.</p>
+       <p>Soil contamination, often overlooked in public discourse, poses serious threats to food security and human health. Heavy metals from industrial activities, pesticides from agriculture, and improper waste disposal have rendered millions of hectares of farmland unusable. This contamination enters the food chain through crops grown in polluted soil, accumulating in plants and animals that humans eventually consume. Studies have linked soil pollution to increased rates of cancer, neurological disorders, and developmental issues.</p>
+       <h3 class="text-xl text-cyan-400 font-semibold mt-8 mb-4">The Interconnected Nature of Environmental Pollution</h3>
+       <p>Understanding global pollution requires recognizing its interconnected nature. Air pollution doesn't remain in the atmosphere—particulate matter settles on soil and water, while acid rain created by sulfur dioxide and nitrogen oxides damages forests and acidifies lakes. Plastic pollution in oceans breaks down into microplastics that fish ingest, which humans then consume through seafood. This interconnection means that pollution in one part of the world affects ecosystems and populations thousands of miles away.</p>
+       <p>The economic costs of pollution are immense. The World Bank estimates that air pollution costs the global economy over $8 trillion annually in lost labor income, healthcare expenses, and reduced agricultural productivity. Developing nations bear a disproportionate burden, with 91% of pollution-related deaths occurring in low and middle-income countries where environmental regulations may be weaker and industrial activities less controlled.</p>
+       <p>Climate change and pollution share a symbiotic relationship, each exacerbating the other. Fossil fuel combustion—the primary driver of air pollution—also releases greenhouse gases that warm our planet. Higher temperatures increase ground-level ozone formation, worsening air quality, while changing weather patterns affect pollutant dispersion and concentration. Addressing global pollution is therefore inseparable from tackling climate change.</p>
+      </div>
+      <div class="mt-8 text-sm text-gray-500 italic">
+       Image Credit: Environmental illustration by DebateSylhetBD
+      </div>
+     </div><!-- Causes of Climate Change Section -->
+     <div class="section-card">
+      <div class="section-icon bg-gradient-to-br from-red-600 to-orange-600">
+       🔥
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="gradient-text">Causes of Climate Change</span></h2>
+      <h3 class="text-xl text-red-400 font-semibold mb-4">Unraveling the Human and Natural Factors Driving Global Warming</h3>
+      <div class="content-text">
+       <p>Climate change, defined as long-term shifts in global temperatures and weather patterns, stems from a complex interplay of natural processes and human activities. While Earth's climate has fluctuated throughout its 4.5-billion-year history due to volcanic eruptions, solar variations, and orbital changes, the unprecedented warming observed since the Industrial Revolution is overwhelmingly attributed to human activities. Understanding these causes is essential for developing effective mitigation strategies and protecting future generations.</p>
+       <p>The primary driver of contemporary climate change is the burning of fossil fuels—coal, oil, and natural gas—for energy production, transportation, and industrial processes. When burned, these carbon-rich materials release carbon dioxide (CO2) into the atmosphere at rates far exceeding natural absorption capacity. Since 1850, atmospheric CO2 concentrations have risen from approximately 280 parts per million (ppm) to over 420 ppm today—the highest levels in at least 800,000 years. This excess CO2 acts as a thermal blanket, trapping heat that would otherwise escape into space.</p>
+       <div class="highlight-box"><strong class="text-red-400">Critical Statistic:</strong> The global energy sector accounts for approximately 73% of human-caused greenhouse gas emissions. Power generation, transportation, and industrial activities collectively release over 36 billion metric tons of CO2 annually, with emissions continuing to rise despite international climate commitments.
+       </div>
+       <p>Deforestation and land-use changes represent the second-largest source of greenhouse gas emissions. Forests serve as crucial carbon sinks, absorbing approximately 2.6 billion metric tons of CO2 annually. When forests are cleared for agriculture, logging, or urban development, this stored carbon is released back into the atmosphere. The Amazon rainforest alone stores an estimated 150-200 billion tons of carbon—roughly four years of global emissions—making its preservation critical for climate stability.</p>
+       <p>Agriculture contributes significantly to climate change through multiple pathways. Livestock, particularly cattle, produce methane—a greenhouse gas 80 times more potent than CO2 over a 20-year period—through digestive processes and manure management. Rice paddies, another major methane source, emit approximately 100 million metric tons of the gas annually. Synthetic fertilizer production and application release nitrous oxide, which has 300 times the warming potential of CO2 and persists in the atmosphere for over a century.</p>
+       <h3 class="text-xl text-orange-400 font-semibold mt-8 mb-4">Industrial Processes and Chemical Emissions</h3>
+       <p>Industrial activities beyond energy production contribute substantially to greenhouse gas emissions. Cement manufacturing, responsible for approximately 8% of global CO2 emissions, releases carbon through both fuel combustion and the chemical transformation of limestone. Steel production, petrochemical processing, and aluminum manufacturing each add billions of tons of emissions annually. Fluorinated gases used in refrigeration, air conditioning, and manufacturing—though present in smaller quantities—have warming potentials thousands of times greater than CO2.</p>
+       <p>Urbanization and infrastructure development accelerate climate change through multiple mechanisms. Cities, covering just 3% of Earth's land surface, generate over 70% of global CO2 emissions. The heat island effect—where concrete and asphalt absorb and re-radiate solar energy—raises urban temperatures 1-3°C above surrounding areas, increasing energy demand for cooling. Building construction and operation account for nearly 40% of global energy-related emissions.</p>
+       <p>Feedback loops amplify initial warming, creating self-reinforcing cycles that accelerate climate change. As Arctic ice melts, the exposed dark ocean absorbs more sunlight, further warming the region. Thawing permafrost releases stored methane and CO2, adding to atmospheric greenhouse gas concentrations. Warmer temperatures increase atmospheric water vapor—itself a greenhouse gas—creating additional warming. These feedbacks mean that each degree of warming triggers additional warming, potentially pushing Earth's climate past critical tipping points.</p>
+       <p>While natural factors like volcanic eruptions and solar cycles influence climate, their effects are relatively minor compared to human activities. Major volcanic eruptions can temporarily cool the planet by reflecting sunlight, but their impact lasts only 2-3 years. Solar output has remained relatively stable over the past century, unable to explain observed warming trends. The scientific consensus, represented by over 97% of climate scientists, confirms that human activities are the dominant cause of observed warming since the mid-20th century.</p>
+      </div>
+      <div class="mt-8 text-sm text-gray-500 italic">
+       Image Credit: Climate change illustration by DebateSylhetBD
+      </div>
+     </div><!-- Effects of Global Warming Section -->
+     <div class="section-card">
+      <div class="section-icon bg-gradient-to-br from-blue-600 to-cyan-600">
+       🌊
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="gradient-text">Effects of Global Warming</span></h2>
+      <h3 class="text-xl text-cyan-400 font-semibold mb-4">The Far-Reaching Consequences of a Warming Planet</h3>
+      <div class="content-text">
+       <p>Global warming effects are no longer distant predictions—they are observable realities transforming our planet at an alarming pace. The past decade has been the warmest on record, with 2023 marking the hottest year in at least 125,000 years. These rising temperatures trigger cascading effects across Earth's interconnected systems, threatening ecosystems, economies, and human societies worldwide. Understanding these impacts is crucial for appreciating the urgency of climate action.</p>
+       <p>Rising sea levels represent one of the most visible and threatening consequences of global warming. As ocean waters warm, they expand, while melting glaciers and ice sheets add additional volume. Global mean sea level has risen approximately 20 centimeters since 1900 and is accelerating, with projections suggesting 0.3 to 1 meter of additional rise by 2100 depending on emission scenarios. This threatens hundreds of millions of people living in coastal areas, with cities like Miami, Mumbai, Shanghai, and Bangkok facing existential threats to their long-term viability.</p>
+       <div class="highlight-box"><strong class="text-cyan-400">Alarming Projection:</strong> By 2050, over 1 billion people could be displaced by climate-related events including sea-level rise, extreme weather, and resource scarcity. Low-lying island nations like Tuvalu, Maldives, and Marshall Islands face complete submersion within this century if warming continues unabated.
+       </div>
+       <p>Extreme weather events are intensifying in frequency and severity. Heat waves have become longer, more frequent, and more intense, causing thousands of deaths annually and overwhelming power grids. The 2021 Pacific Northwest heat dome killed over 1,000 people in the United States and Canada, with temperatures reaching 49.6°C (121°F) in British Columbia—shattering previous records. Hurricane intensity is increasing as warmer oceans provide more energy, with Category 4 and 5 storms becoming more common.</p>
+       <p>Drought and water scarcity affect billions of people as changing precipitation patterns disrupt water cycles. The Western United States is experiencing its most severe megadrought in 1,200 years, depleting reservoirs and aquifers that supply water to tens of millions. Sub-Saharan Africa faces recurring droughts that threaten food security for hundreds of millions of people. Meanwhile, other regions experience catastrophic flooding as warmer atmospheres hold more moisture, releasing it in intense precipitation events.</p>
+       <h3 class="text-xl text-blue-400 font-semibold mt-8 mb-4">Ecosystem Collapse and Biodiversity Loss</h3>
+       <p>Ecosystems worldwide are experiencing unprecedented stress from global warming. Coral reefs—supporting approximately 25% of marine species—are dying at alarming rates due to ocean warming and acidification. The Great Barrier Reef has experienced five mass bleaching events in the past eight years, with scientists warning that most coral reefs could disappear by 2050 if warming exceeds 1.5°C. This loss would devastate fisheries that feed billions of people and deprive coastal communities of natural storm protection.</p>
+       <p>Arctic ecosystems face particularly severe impacts. Summer sea ice has declined by approximately 40% since 1979, threatening polar bears, walruses, and seals that depend on ice for hunting and resting. Permafrost thaw destabilizes infrastructure, releases greenhouse gases, and unearths ancient pathogens. The Arctic is warming nearly four times faster than the global average, serving as a harbinger of changes to come for temperate regions.</p>
+       <p>Agricultural systems face mounting challenges from changing growing conditions. Shifting rainfall patterns, increased pest pressure, and extreme heat events reduce crop yields even as global population continues to grow. Wheat yields are projected to decline 6% for each degree of warming, while heat stress threatens livestock productivity. Food price volatility and supply disruptions increasingly affect global markets, with climate change identified as a significant threat to food security.</p>
+       <p>Human health impacts extend beyond direct heat exposure. Warming temperatures expand the range of disease-carrying insects, bringing malaria, dengue fever, and Lyme disease to new populations. Air quality degrades as higher temperatures increase ground-level ozone formation and wildfire frequency. Mental health impacts—including anxiety, depression, and trauma from climate disasters—affect millions, with children and vulnerable populations bearing the greatest burden.</p>
+      </div>
+      <div class="mt-8 text-sm text-gray-500 italic">
+       Image Credit: Global warming effects illustration by DebateSylhetBD
+      </div>
+     </div><!-- Solutions Section -->
+     <div class="section-card" id="resources">
+      <div class="section-icon bg-gradient-to-br from-green-600 to-emerald-600">
+       🌱
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="gradient-text">Solutions and Eco-Friendly Practices</span></h2>
+      <h3 class="text-xl text-green-400 font-semibold mb-4">Pathways to a Sustainable and Carbon-Neutral Future</h3>
+      <div class="content-text">
+       <p>While the climate crisis presents unprecedented challenges, humanity possesses the knowledge, technology, and resources to build a sustainable future. The transition to a low-carbon economy is not only environmentally necessary but economically advantageous, with renewable energy now cheaper than fossil fuels in most markets. From individual lifestyle changes to transformative policy interventions, solutions exist at every scale to address global pollution and climate change.</p>
+       <p>Renewable energy deployment represents the cornerstone of climate solutions. Solar and wind power costs have declined by 89% and 70% respectively over the past decade, making clean energy the most economical choice for new electricity generation. Countries like Denmark, Uruguay, and Costa Rica now generate over 90% of their electricity from renewable sources, demonstrating the feasibility of rapid energy transition. Investment in renewable energy reached a record $1.1 trillion in 2022, signaling accelerating momentum.</p>
+       <div class="highlight-box"><strong class="text-green-400">Opportunity:</strong> The International Energy Agency estimates that achieving net-zero emissions by 2050 would create 14 million new jobs in clean energy while reducing global air pollution deaths by 2.5 million annually. The transition to sustainability represents one of the greatest economic opportunities in history.
+       </div>
+       <p>Energy efficiency improvements offer the most cost-effective path to emission reductions. Building retrofits, efficient appliances, and smart grid technologies can reduce energy consumption by 30-50% without sacrificing comfort or productivity. Electric vehicles, now approaching price parity with conventional cars, offer 3-4 times greater energy efficiency than internal combustion engines. Industrial process optimization and waste heat recovery provide substantial emission reductions in manufacturing sectors.</p>
+       <p>Nature-based solutions harness Earth's ecosystems to capture and store carbon while providing biodiversity and livelihood benefits. Reforestation and forest conservation can absorb 10 billion tons of CO2 annually—approximately 25% of current emissions. Coastal wetland restoration protects shorelines from storms while sequestering carbon at rates 5-10 times greater than terrestrial forests. Regenerative agriculture practices improve soil health, reduce fertilizer needs, and increase carbon sequestration in farmland.</p>
+       <h3 class="text-xl text-emerald-400 font-semibold mt-8 mb-4">Individual Actions and Community Initiatives</h3>
+       <p>Individual lifestyle changes, while insufficient alone, collectively influence markets, policies, and cultural norms. Dietary shifts toward plant-based foods can reduce personal carbon footprints by up to 50%, while reducing water use and land requirements. Choosing active transportation, reducing air travel, and minimizing consumption of fast fashion and single-use plastics contribute to emission reductions while often improving health and financial well-being.</p>
+       <p>Community-level initiatives amplify individual actions and build social momentum for change. Community solar programs enable renters and apartment dwellers to access clean energy. Local food systems reduce transportation emissions while supporting regional farmers. Tool libraries, repair cafes, and sharing economies reduce consumption and waste. These initiatives build social capital and demonstrate alternatives to consumption-driven lifestyles.</p>
+       <p>Circular economy principles offer systemic solutions to resource depletion and waste. By designing products for durability, repair, and recycling, manufacturers can dramatically reduce material throughput and associated emissions. Extended producer responsibility policies incentivize sustainable design, while deposit-return systems achieve recycling rates exceeding 90% in leading countries. The transition from linear "take-make-dispose" models to circular systems represents a fundamental reimagining of economic activity.</p>
+       <p>Carbon capture and removal technologies, while not substitutes for emission reductions, may play supporting roles in achieving climate targets. Direct air capture facilities, though currently expensive, are declining in cost and scaling rapidly. Bioenergy with carbon capture and storage (BECCS) offers potential for negative emissions, while enhanced weathering of minerals provides permanent CO2 storage. Investment in these technologies complements rather than replaces urgent emission reductions.</p>
+      </div>
+      <div class="mt-8 text-sm text-gray-500 italic">
+       Image Credit: Sustainable solutions illustration by DebateSylhetBD
+      </div>
+     </div><!-- Global Problems Section -->
+     <div class="section-card">
+      <div class="section-icon bg-gradient-to-br from-purple-600 to-pink-600">
+       🌐
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="gradient-text">Global Problems and How We Can Fix Them</span></h2>
+      <h3 class="text-xl text-purple-400 font-semibold mb-4">Addressing Interconnected Environmental Challenges Through Collective Action</h3>
+      <div class="content-text">
+       <p>The environmental challenges facing humanity are deeply interconnected, requiring systemic solutions that address root causes rather than symptoms. Climate change, biodiversity loss, pollution, and resource depletion share common drivers in unsustainable economic systems, inequitable resource distribution, and short-term thinking. Solving these interconnected problems demands unprecedented international cooperation, technological innovation, and fundamental shifts in how societies value nature and future generations.</p>
+       <p>Plastic pollution has emerged as a defining environmental crisis of our time. Annual plastic production exceeds 400 million tons, with less than 10% recycled and the remainder accumulating in landfills, oceans, and ecosystems. Microplastics have been found in human blood, breast milk, and remote wilderness areas, with health implications still being understood. The recently negotiated Global Plastics Treaty represents international recognition that voluntary measures have failed—binding regulations are needed to address production, design, and disposal.</p>
+       <div class="highlight-box"><strong class="text-purple-400">Global Challenge:</strong> Biodiversity is declining at rates unprecedented in human history, with approximately 1 million species facing extinction. This sixth mass extinction threatens ecosystem services—pollination, water purification, climate regulation—valued at over $150 trillion annually, more than twice global GDP.
+       </div>
+       <p>Ocean acidification, often called climate change's "evil twin," threatens marine ecosystems as oceans absorb excess CO2. Since industrialization, ocean pH has declined by 30%, with profound implications for shell-forming organisms including corals, mollusks, and plankton that form the base of marine food webs. Combined with warming, deoxygenation, and overfishing, acidification pushes ocean ecosystems toward tipping points that could fundamentally alter marine life and the billions of people who depend on it.</p>
+       <p>Freshwater scarcity affects over 4 billion people at least one month per year, with demand projected to exceed supply by 40% by 2030 under current trajectories. Groundwater—supplying half of global drinking water and 40% of irrigation—is being depleted faster than natural replenishment in major agricultural regions. Transboundary water conflicts threaten regional stability, with over 260 river basins shared by multiple countries. Integrated water resource management, efficiency improvements, and reduced pollution offer pathways to sustainable water security.</p>
+       <h3 class="text-xl text-pink-400 font-semibold mt-8 mb-4">Systemic Solutions for Global Challenges</h3>
+       <p>Addressing these interconnected challenges requires transforming the economic systems that drive environmental degradation. Natural capital accounting—valuing ecosystem services in economic decision-making—can correct market failures that treat nature as free and infinite. Carbon pricing mechanisms, now implemented in over 45 countries, incentivize emission reductions while generating revenue for climate investments. Removal of fossil fuel subsidies—currently exceeding $7 trillion annually including external costs—would redirect resources toward sustainable alternatives.</p>
+       <p>International cooperation mechanisms, though imperfect, provide frameworks for collective action. The Paris Agreement, with 195 signatories committing to limit warming to 1.5°C, represents unprecedented global consensus on climate action. The Kunming-Montreal Global Biodiversity Framework establishes targets to protect 30% of land and ocean by 2030. The High Seas Treaty creates governance structures for international waters. These agreements require strengthening, but demonstrate capacity for coordinated global response.</p>
+       <p>Technology transfer and climate finance enable developing nations to pursue sustainable development pathways. The $100 billion annual climate finance commitment—though not yet fully delivered—acknowledges developed nations' historical responsibility and developing nations' right to development. South-South cooperation facilitates sharing of appropriate technologies and best practices. Just transition frameworks ensure that workers and communities dependent on fossil fuels are not left behind in the energy transition.</p>
+       <p>Youth-led movements have injected urgency and moral clarity into environmental advocacy. Fridays for Future, Extinction Rebellion, and Sunrise Movement have mobilized millions worldwide, demanding action commensurate with scientific warnings. Indigenous peoples, whose territories contain 80% of remaining biodiversity, increasingly gain recognition as essential partners in conservation. These movements build political will for transformative policies that match the scale of environmental challenges.</p>
+      </div>
+      <div class="mt-8 text-sm text-gray-500 italic">
+       Image Credit: Global environmental challenges by DebateSylhetBD
+      </div>
+     </div><!-- Students Section -->
+     <div class="section-card">
+      <div class="section-icon bg-gradient-to-br from-yellow-500 to-amber-600">
+       📚
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6"><span class="gradient-text">How Students Can Make a Difference</span></h2>
+      <h3 class="text-xl text-yellow-400 font-semibold mb-4">Empowering the Next Generation of Environmental Leaders</h3>
+      <div class="content-text">
+       <p>Students occupy a unique position in the fight against environmental degradation—they are simultaneously inheritors of current decisions and architects of future solutions. Young people have consistently led movements for social change, bringing energy, creativity, and moral urgency to causes they believe in. The climate crisis is no exception, with student activists driving policy changes at local, national, and international levels. From classroom projects to global strikes, students are demonstrating that age is no barrier to meaningful action.</p>
+       <p>Campus sustainability initiatives provide tangible opportunities for student engagement while reducing institutional environmental footprints. Students have successfully advocated for fossil fuel divestment at universities managing over $40 billion in endowments. Zero-waste dining programs, campus gardens, and renewable energy installations often begin as student proposals. These campaigns develop leadership skills, build coalitions across disciplines, and create visible demonstrations of sustainable alternatives.</p>
+       <div class="highlight-box"><strong class="text-yellow-400">Student Power:</strong> Greta Thunberg's solitary school strike in August 2018 sparked a global movement that has mobilized over 16 million participants across 7,500 cities in 185 countries. This demonstrates that individual actions can cascade into transformative collective movements.
+       </div>
+       <p>Academic engagement with environmental issues prepares students for careers in the growing green economy. Environmental science, sustainable engineering, climate policy, and ecological economics are rapidly expanding fields offering meaningful career opportunities. Interdisciplinary programs integrating sustainability across traditional disciplines—from business to arts to medicine—recognize that environmental challenges require diverse expertise. Research opportunities enable students to contribute directly to scientific understanding and solution development.</p>
+       <p>Personal lifestyle choices, while not substitutes for systemic change, build habits, demonstrate alternatives, and influence peers. Reducing meat consumption, choosing sustainable transportation, minimizing single-use plastics, and buying secondhand goods all reduce individual environmental footprints. More importantly, these choices spark conversations, normalize sustainable behaviors, and create market demand for eco-friendly products. Students living sustainably influence family members, friends, and future communities they join.</p>
+       <h3 class="text-xl text-amber-400 font-semibold mt-8 mb-4">Building Skills for Environmental Leadership</h3>
+       <p>Effective environmental advocacy requires diverse skills that students can develop through coursework, extracurricular activities, and practical experience. Communication skills—writing, public speaking, social media engagement—enable activists to reach broader audiences and influence public opinion. Scientific literacy allows advocates to understand and convey complex environmental information accurately. Political engagement skills—lobbying, organizing, voter mobilization—translate concern into policy change.</p>
+       <p>Community organizing builds power for environmental justice. Many environmental burdens—toxic facilities, polluted air and water, climate impacts—disproportionately affect low-income communities and communities of color. Student activists increasingly recognize that environmental solutions must address these inequities. Environmental justice frameworks integrate social, economic, and ecological concerns, building broader coalitions and more durable solutions.</p>
+       <p>Entrepreneurship and innovation offer pathways for students to develop practical solutions. Social enterprises addressing environmental challenges—sustainable products, clean energy access, waste reduction—create jobs while generating positive impact. Student competitions and incubators provide resources and mentorship for environmental startups. Young entrepreneurs bring fresh perspectives and willingness to challenge established practices that often drive breakthrough innovations.</p>
+       <p>Global connectivity enables students to learn from and collaborate with peers worldwide. International exchange programs, virtual conferences, and social media networks connect young environmentalists across borders. Learning from youth activists in climate-vulnerable nations—Pacific islands, Sub-Saharan Africa, Southeast Asia—builds solidarity and enriches understanding. These connections remind students that environmental challenges transcend national boundaries and require global cooperation.</p>
+       <p>Perhaps most importantly, students bring hope and determination that counter climate despair. While acknowledging the severity of environmental challenges, young people refuse to accept that the future is predetermined. This generational determination—insisting on a livable planet regardless of obstacles—may prove the most essential ingredient in addressing the climate crisis. Students today are not just preparing for careers; they are preparing to save their world.</p>
+      </div>
+      <div class="mt-8 text-sm text-gray-500 italic">
+       Image Credit: Student environmental action by DebateSylhetBD
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="glow-line max-w-4xl mx-auto"></div><!-- Blog Section -->
+   <section id="blog" class="py-20 px-6 bg-gradient-to-b from-transparent to-blue-950/20">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-16">
+      <div class="inline-block px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-sm font-medium mb-4">
+       📰 Latest Updates
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Environmental Blog</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Stay informed with the latest news, research, and insights on global pollution, climate change solutions, and eco-friendly practices.</p>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Blog Post 1 -->
+      <article class="blog-card">
+       <div class="blog-thumbnail bg-gradient-to-br from-blue-900 to-blue-700"><span aria-hidden="true">🌊</span>
+        <div class="absolute bottom-3 left-3 right-3"><span class="tag bg-blue-500/80 text-white">Ocean Conservation</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="text-xs text-gray-500 mb-2">
+         December 15, 2025
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Ocean Plastic Crisis: New Solutions for 2026</h3>
+        <p class="text-gray-400 text-sm mb-4">Innovative cleanup technologies and policy changes are showing promise in addressing the 8 million tons of plastic entering our oceans annually. Learn about breakthrough approaches.</p>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="tag bg-white/10 text-gray-300">ocean pollution</span> <span class="tag bg-white/10 text-gray-300">plastic waste</span>
+        </div><a href="#" class="text-blue-400 hover:text-blue-300 font-medium text-sm">Read More →</a>
+       </div>
+      </article><!-- Blog Post 2 -->
+      <article class="blog-card">
+       <div class="blog-thumbnail bg-gradient-to-br from-green-900 to-emerald-700"><span aria-hidden="true">🌳</span>
+        <div class="absolute bottom-3 left-3 right-3"><span class="tag bg-green-500/80 text-white">Deforestation</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="text-xs text-gray-500 mb-2">
+         December 10, 2025
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Amazon Reforestation: Hope Amidst the Crisis</h3>
+        <p class="text-gray-400 text-sm mb-4">Community-led reforestation projects in Brazil are restoring thousands of hectares of rainforest, offering a model for global forest recovery efforts.</p>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="tag bg-white/10 text-gray-300">deforestation</span> <span class="tag bg-white/10 text-gray-300">carbon sequestration</span>
+        </div><a href="#" class="text-green-400 hover:text-green-300 font-medium text-sm">Read More →</a>
+       </div>
+      </article><!-- Blog Post 3 -->
+      <article class="blog-card">
+       <div class="blog-thumbnail bg-gradient-to-br from-yellow-900 to-orange-700"><span aria-hidden="true">☀️</span>
+        <div class="absolute bottom-3 left-3 right-3"><span class="tag bg-orange-500/80 text-white">Renewable Energy</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="text-xs text-gray-500 mb-2">
+         December 5, 2025
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Solar Power Breakthrough: 50% Efficiency Achieved</h3>
+        <p class="text-gray-400 text-sm mb-4">New perovskite solar cells have achieved record efficiency levels, promising more affordable and powerful renewable energy solutions for communities worldwide.</p>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="tag bg-white/10 text-gray-300">solar energy</span> <span class="tag bg-white/10 text-gray-300">clean technology</span>
+        </div><a href="#" class="text-orange-400 hover:text-orange-300 font-medium text-sm">Read More →</a>
+       </div>
+      </article><!-- Blog Post 4 -->
+      <article class="blog-card">
+       <div class="blog-thumbnail bg-gradient-to-br from-gray-800 to-gray-600"><span aria-hidden="true">🏭</span>
+        <div class="absolute bottom-3 left-3 right-3"><span class="tag bg-gray-500/80 text-white">Air Quality</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="text-xs text-gray-500 mb-2">
+         November 28, 2025
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Cities Fighting Smog: Success Stories from Asia</h3>
+        <p class="text-gray-400 text-sm mb-4">Beijing, Delhi, and Bangkok are implementing aggressive air quality measures that have reduced PM2.5 levels by up to 40% in some areas. Discover their strategies.</p>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="tag bg-white/10 text-gray-300">air pollution</span> <span class="tag bg-white/10 text-gray-300">urban environment</span>
+        </div><a href="#" class="text-gray-300 hover:text-white font-medium text-sm">Read More →</a>
+       </div>
+      </article><!-- Blog Post 5 -->
+      <article class="blog-card">
+       <div class="blog-thumbnail bg-gradient-to-br from-cyan-900 to-blue-800"><span aria-hidden="true">❄️</span>
+        <div class="absolute bottom-3 left-3 right-3"><span class="tag bg-cyan-500/80 text-white">Climate Science</span>
+        </div>
+       </div>
+       <div class="p-6">
+        <div class="text-xs text-gray-500 mb-2">
+         November 20, 2025
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Arctic Ice: What Latest Data Reveals</h3>
+        <p class="text-gray-400 text-sm mb-4">New satellite measurements show accelerating ice loss in both polar regions, with implications for global sea levels and weather patterns affecting billions.</p>
+        <div class="flex flex-wrap gap-2 mb-4"><span class="tag bg-white/10 text-gray-300">global warming</span> <span class="tag bg-white/10 text-gray-300">ice melt</span>
+        </div><a href="#" class="text-cyan-400 hover:text-cyan-300 font-medium text-sm">Read More →</a>
+       </div>
+      </article><!-- Newsletter Signup Card -->
+      <article class="blog-card bg-gradient-to-br from-blue-900/50 to-purple-900/50">
+       <div class="p-8 flex flex-col justify-center h-full min-h-[380px]"><span class="text-5xl mb-4">📧</span>
+        <h3 class="text-xl font-bold text-white mb-3">Subscribe to Our Newsletter</h3>
+        <p class="text-gray-400 text-sm mb-6">Get weekly updates on environmental news, eco-friendly tips, and action opportunities delivered to your inbox.</p>
+        <form class="space-y-3" onsubmit="handleNewsletterSubmit(event)"><label for="newsletter-email" class="sr-only">Email Address</label> <input type="email" id="newsletter-email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500" required> <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all"> Subscribe </button>
+        </form>
+        <p id="newsletter-message" class="text-green-400 text-sm mt-3 hidden">Thanks for subscribing!</p>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <div class="glow-line max-w-4xl mx-auto"></div><!-- Statistics Section -->
+   <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">The Numbers Don't Lie</h2>
+      <p class="text-gray-400">Critical environmental statistics that demand immediate action</p>
+     </div>
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="stat-card">
+       <div class="stat-number">
+        7M
+       </div>
+       <div class="text-gray-400 text-sm mt-2">
+        Deaths from Air Pollution Annually
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="stat-number">
+        420+
+       </div>
+       <div class="text-gray-400 text-sm mt-2">
+        CO2 PPM (Highest in 800K Years)
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="stat-number">
+        1M
+       </div>
+       <div class="text-gray-400 text-sm mt-2">
+        Species Facing Extinction
+       </div>
+      </div>
+      <div class="stat-card">
+       <div class="stat-number">
+        2050
+       </div>
+       <div class="text-gray-400 text-sm mt-2">
+        Net Zero Target Year
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-20 px-6 bg-gradient-to-b from-transparent to-gray-900/50">
+    <div class="max-w-4xl mx-auto">
+     <div class="glass-card p-8 md:p-12">
+      <div class="text-center mb-10">
+       <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Get In Touch</h2>
+       <p class="text-gray-400">Have questions about environmental issues or want to collaborate? We'd love to hear from you!</p>
+      </div>
+      <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+       <div class="grid md:grid-cols-2 gap-6">
+        <div><label for="contact-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label> <input type="text" id="contact-name" placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500" required>
+        </div>
+        <div><label for="contact-email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label> <input type="email" id="contact-email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500" required>
+        </div>
+       </div>
+       <div><label for="contact-subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label> <input type="text" id="contact-subject" placeholder="How can we help?" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500" required>
+       </div>
+       <div><label for="contact-message" class="block text-sm font-medium text-gray-300 mb-2">Message</label> <textarea id="contact-message" rows="5" placeholder="Your message..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 resize-none" required></textarea>
+       </div><button type="submit" class="cta-button w-full md:w-auto"> Send Message </button>
+       <p id="contact-success" class="text-green-400 text-center hidden">Message sent successfully! We'll get back to you soon.</p>
+      </form>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="relative pt-20 pb-8 px-6 bg-gradient-to-b from-gray-900 to-black">
+    <div class="footer-wave"></div>
+    <div class="max-w-6xl mx-auto">
+     <div class="grid md:grid-cols-4 gap-12 mb-12"><!-- Brand Column -->
+      <div class="md:col-span-2">
+       <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center"><span class="text-2xl">🌍</span>
+        </div>
+        <div>
+         <h3 class="text-xl font-bold gradient-text">DebateSylhetBD</h3>
+         <p class="text-xs text-gray-400">Environmental Hub</p>
+        </div>
+       </div>
+       <p class="text-gray-400 text-sm mb-6 max-w-md">Dedicated to raising awareness about global pollution, climate change, and environmental sustainability. Join our mission to protect the planet for future generations.</p><!-- Social Media Links -->
+       <div class="flex gap-3"><a href="#" class="social-icon" aria-label="Facebook"> <span>📘</span> </a> <a href="#" class="social-icon" aria-label="Twitter"> <span>🐦</span> </a> <a href="#" class="social-icon" aria-label="Instagram"> <span>📷</span> </a> <a href="#" class="social-icon" aria-label="YouTube"> <span>📺</span> </a> <a href="#" class="social-icon" aria-label="LinkedIn"> <span>💼</span> </a>
+       </div>
+      </div><!-- Quick Links -->
+      <div>
+       <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+       <nav class="space-y-3">
+
+  <a href="index.html"
+     class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition-all text-sm">
+     Home
+  </a>
+
+  <a href="post.html"
+     class="block text-center bg-red-600 hover:bg-red-700 text-white py-2 rounded transition-all text-sm">
+     Blog / Posts
+  </a>
+
+  <a href="debate.html"
+     class="block text-center bg-orange-500 hover:bg-orange-600 text-white py-2 rounded transition-all text-sm">
+     Debate
+  </a>
+
+  <a href="history.html"
+     class="block text-center bg-purple-600 hover:bg-purple-700 text-white py-2 rounded transition-all text-sm">
+     History
+  </a>
+
+  <a href="tawhid-abedin.html"
+     class="block text-center bg-gray-700 hover:bg-gray-800 text-white py-2 rounded transition-all text-sm">
+     latest post
+  </a>
+
+</nav>
+       </nav>
+      </div><!-- Contact Info -->
+      <div>
+       <h4 class="text-white font-semibold mb-4">Contact Info</h4>
+       <div class="space-y-3 text-sm">
+        <p class="text-gray-400"><span class="text-blue-400">📍</span> Sylhet, Bangladesh</p>
+        <p class="text-gray-400"><span class="text-blue-400">📧</span> rahimchawdhury63@gmail.com</p>
+       </div>
+      </div>
+     </div><!-- Powered By  mmm mmm mmmm yyyyyyyyyyyCredit -->
+     <div class="text-center py-6 border-t border-white/10 mb-6">
+      <p class="text-lg font-medium"><span class="text-gray-400">Website powered by </span> <span class="gradient-text font-bold">DebateSylhetBD</span></p>
+     </div><!-- Copyright -->
+     <div class="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-white/10">
+      <p class="text-gray-500 text-sm">© 2026 DebateSylhetBD. All rights reserved.</p>
+      <div class="flex gap-6 mt-4 md:mt-0"><a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Privacy Policy</a> <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Terms of Service</a> <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors">Cookie Policy</a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Default configuration
+    const defaultConfig = {
+      site_title: "DebateSylhetBD",
+      hero_headline: "Protect Our Planet For Future Generations",
+      hero_subheadline: "Discover the truth about global pollution, climate change, and environmental degradation. Learn eco-friendly solutions and join millions fighting for a sustainable world.",
+      cta_button_text: "Learn More",
+      background_color: "#0A0A0F",
+      surface_color: "#14141E",
+      text_color: "#FFFFFF",
+      primary_action_color: "#0066FF",
+      secondary_action_color: "#FF8C00",
+      font_family: "Outfit",
+      font_size: 16
+    };
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          // Update site title
+          const siteTitleEl = document.getElementById('site-title');
+          if (siteTitleEl) {
+            siteTitleEl.textContent = config.site_title || defaultConfig.site_title;
+          }
+          
+          // Update hero headline
+          const heroHeadlineEl = document.getElementById('hero-headline');
+          if (heroHeadlineEl) {
+            const headline = config.hero_headline || defaultConfig.hero_headline;
+            const parts = headline.split(' ');
+            const midpoint = Math.ceil(parts.length / 2);
+            const firstHalf = parts.slice(0, midpoint).join(' ');
+            const secondHalf = parts.slice(midpoint).join(' ');
+            heroHeadlineEl.innerHTML = `<span class="gradient-text">${firstHalf}</span><br><span class="text-white">${secondHalf}</span>`;
+          }
+          
+          // Update hero subheadline
+          const heroSubheadlineEl = document.getElementById('hero-subheadline');
+          if (heroSubheadlineEl) {
+            heroSubheadlineEl.textContent = config.hero_subheadline || defaultConfig.hero_subheadline;
+          }
+          
+          // Update CTA button
+          const ctaButtonEl = document.getElementById('cta-button');
+          if (ctaButtonEl) {
+            ctaButtonEl.textContent = config.cta_button_text || defaultConfig.cta_button_text;
+          }
+          
+          // Apply colors
+          const bgColor = config.background_color || defaultConfig.background_color;
+          const surfaceColor = config.surface_color || defaultConfig.surface_color;
+          const textColor = config.text_color || defaultConfig.text_color;
+          const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+          const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+          
+          document.documentElement.style.setProperty('--dark-bg', bgColor);
+          document.body.style.backgroundColor = bgColor;
+          document.body.style.color = textColor;
+          
+          // Apply font
+          const fontFamily = config.font_family || defaultConfig.font_family;
+          const baseFontStack = 'sans-serif';
+          document.body.style.fontFamily = `${fontFamily}, ${baseFontStack}`;
+          
+          // Apply font size
+          const fontSize = config.font_size || defaultConfig.font_size;
+          document.documentElement.style.fontSize = `${fontSize}px`;
+        },
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["site_title", config.site_title || defaultConfig.site_title],
+          ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+          ["hero_subheadline", config.hero_subheadline || defaultConfig.hero_subheadline],
+          ["cta_button_text", config.cta_button_text || defaultConfig.cta_button_text]
+        ])
+      });
+    }
+
+    // Mobile Navigation Toggle
+    function toggleMobileNav() {
+      const mobileNav = document.getElementById('mobile-nav');
+      mobileNav.classList.toggle('hidden');
+    }
+
+    // Newsletter Form Handler
+    function handleNewsletterSubmit(event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('newsletter-email');
+      const messageEl = document.getElementById('newsletter-message');
+      
+      // Show success message
+      messageEl.classList.remove('hidden');
+      emailInput.value = '';
+      
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        messageEl.classList.add('hidden');
+      }, 3000);
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const successEl = document.getElementById('contact-success');
+      
+      // Clear form
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-email').value = '';
+      document.getElementById('contact-subject').value = '';
+      document.getElementById('contact-message').value = '';
+      
+      // Show success message
+      successEl.classList.remove('hidden');
+      
+      // Hide message after 4 seconds
+      setTimeout(() => {
+        successEl.classList.add('hidden');
+      }, 4000);
+    }
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 100;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Header background on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(10, 10, 15, 0.95)';
+      } else {
+        header.style.background = 'rgba(255, 255, 255, 0.05)';
+      }
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c731a3284bf3e6f',t:'MTc2OTk2NjI0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
