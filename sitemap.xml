@@ -4,7 +4,7 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
 
 
 <url>
@@ -13,7 +13,7 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://debatesylhetbd.onrender.com/admin.html</loc>
+  <loc>https://debatesylhetbd.onrender.com/index.html</loc>
   <lastmod>2026-02-12T14:47:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -43,20 +43,21 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://debatesylhetbd.onrender.com/index.html</loc>
+  <loc>https://debatesylhetbd.onrender.com/sitemap.xml</loc>
   <lastmod>2026-02-12T14:47:37+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.01</priority>
 </url>
 <url>
   <loc>https://debatesylhetbd.onrender.com/paragraphs.html</loc>
   <lastmod>2026-02-12T14:47:37+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.74</priority>
 </url>
 <url>
   <loc>https://debatesylhetbd.onrender.com/tawhid-abedin.html</loc>
   <lastmod>2026-02-12T14:47:37+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.74</priority>
 </url>
+
 
 
 </urlset>
