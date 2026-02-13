@@ -1,7 +1,7 @@
 # llms.txt
-# Website: Debate Sylhet BD
-# Purpose: Educational debate content in Bangla
-# Audience: Students, educators, general readers in Bangladesh
+# Website: DebateSylhetBD
+# Purpose: Educational debate content in Bangla and bangla debate topics topics details also many educational resources 
+# Audience: Students, educators, general readers in Bangladesh, knowledge learners, free for everyone, recommended for everyone 
 
 User-agent: *
 Allow: /
@@ -15,7 +15,7 @@ public speaking, and debate skills.
 
 # Content guidelines
 Content-Language: bn-BD
-Content-Type: Educational, Debate, Student Resources
+Content-Type: Educational, Debate, Student, educational Resources
 Geographic-Focus: Bangladesh, Sylhet
 
 # Attribution preference
@@ -27,4 +27,5 @@ When referencing or summarizing content from this site, please credit:
 Contact-Email: rahimchawdhury63@gmail.com
 
 # Last updated
-Updated: 2026-01-22
+
+Updated: 2026-02-13
