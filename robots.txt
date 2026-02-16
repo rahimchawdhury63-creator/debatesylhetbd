@@ -1,6 +1,19 @@
 User-agent: *
 Allow: /
 disallow: /admin.html
-
+sitemap: https://debatesylhetbd.onrender.com/index_sitemap.xml
 Sitemap: https://debatesylhetbd.onrender.com/sitemap.xml
 Sitemap: https://debatesylhetbd.onrender.com/sitemap-article.xml
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot rules
+User-agent: bingbot
+Allow: /
+
+# Other bots
+User-agent: *
+Crawl-delay: 2
