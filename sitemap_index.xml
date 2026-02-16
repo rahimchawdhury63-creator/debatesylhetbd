@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages Sitemap -->
+  <sitemap>
+    <loc>https://debatesylhetbd.onrender.com/sitemap.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+
+  <!-- Article Sitemap (District Pages) -->
+  <sitemap>
+    <loc>https://debatesylhetbd.onrender.com/article-sitemap.xml</loc>
+    <lastmod>2026-02-16</lastmod>
+  </sitemap>
+
+</sitemapindex>
