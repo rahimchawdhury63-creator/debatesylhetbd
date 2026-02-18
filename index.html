@@ -61,6 +61,10 @@ debate topic in bangla
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="alternate" href="https://www.tiktok.com/@debatesylhetbd" />
+<link rel="alternate" href="https://www.facebook.com/share/1B8LxFEstA/" />
+<link rel="alternate" href="https://www.instagram.com/debatesylhetbd" />
+<link rel="alternate" href="https://youtube.com/@debatesylhetbd" />
     <style>
 #lang-select-top, #lang-search-top{
   min-width:120px;
@@ -72,6 +76,14 @@ select.goog-te-combo{
 .goog-logo-link{display:none!important;}
 .goog-te-gadget span{display:none!important;}
 body{top:0!important;}
+        .main-header {background:#fff; border-bottom:1px solid #ccc; padding:15px;}
+.main-header .container {display:flex; align-items:center;}
+.main-nav ul {list-style:none; padding:0; margin:0; display:flex;}
+.main-nav li {position:relative; margin-right:25px;}
+.main-nav a {text-decoration:none; color:#333; font-weight:500;}
+.dropdown:hover .submenu {display:block;}
+.submenu {display:none; position:absolute; top:100%; left:0; background:#fff; border:1px solid #ccc; padding:10px;}
+.submenu li {margin:0;}
     </style>
     <script type="application/ld+json">
 {
@@ -96,14 +108,84 @@ body{top:0!important;}
   ]
 }
     </script>
+    <!-- Google Translate -->
+<meta name="google" content="notranslate">
+<style>
+/* Simple translation dropdown styling */
+#translate-widget {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+#translate-widget select {
+    padding: 5px;
+    font-size: 14px;
+}
+</style>
 </head>
 <body>
-    <!-- Elfsight Professional Website Translator for DebateSylhetBD -->
-<div style="position:fixed; top:20px; right:20px; z-index:9999;">
-  <div class="elfsight-app-c40d8790-8dfd-4a83-b736-2d458a6d5379" data-elfsight-app-lazy></div>
-</div>
+    <div id="translate-widget">
+    <label for="translate-select">🌐 Translate:</label>
+    <select id="translate-select">
+        <option value="en" selected>English</option>
+        <option value="bn">Bangla</option>
+        <option value="hi">Hindi</option>
+        <option value="ur">Urdu</option>
+        <option value="ar">Arabic</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="de">German</option>
+        <option value="zh-CN">Chinese</option>
+        <option value="ja">Japanese</option>
+    </select>
+    </div>
+    
+    <!-- ULTRA SEO Internal Navigation -->
+<header class="main-header">
+    <div class="container">
+        <a href="/" class="logo">DebateSylhetBD</a>
+        
+        <nav class="main-nav">
+            <ul>
 
-<script src="https://elfsightcdn.com/platform.js" async></script>
+                <!-- HOME -->
+                <li><a href="/">Home</a></li>
+
+                <!-- Debate Hub -->
+                <li class="dropdown">
+                  <a href="#">Debate Topics ▾</a>
+                  <ul class="submenu">
+                    <li><a href="/debate.html">Bangla Debate Topics</a></li>
+                  </ul>
+                </li>
+
+                <!-- Articles / Division Guides -->
+                <li class="dropdown">
+                  <a href="#">Articles & Guides ▾</a>
+                  <ul class="submenu">
+                    <li><a href="/dhaka.html">Dhaka: Full Article</a></li>
+                    <li><a href="/sylhet.html">Sylhet District Guide</a></li>
+                    <li><a href="/chattogram-division.html">Chattogram Division Guide</a></li>
+                    <li><a href="/khulna-division.html">Khulna Division Guide</a></li>
+                  </ul>
+                </li>
+
+                <!-- Static Pages -->
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+
+                <!-- Extras -->
+                <li><a href="/sitemap.xml">Sitemap</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     
 
     <!-- Watermark -->
@@ -542,6 +624,12 @@ form.addEventListener("submit", async function(e){
 
   <div class="footer-bottom">
     <p>© 2026 DebateSylhetBD. All Rights Reserved.</p>
+      <a href="https://www.facebook.com/share/1B8LxFEstA/">Facebook</a> |
+  <a href="https://www.instagram.com/debatesylhetbd">Instagram</a> |
+  <a href="https://www.tiktok.com/@debatesylhetbd">TikTok</a> |
+  <a href="https://youtube.com/@debatesylhetbd">YouTube</a> |
+  <a href="https://github.com/rahimchawdhury63-creator/debatesylhetbd/releases/tag/1.0.0">GitHub</a> |
+  <a href="https://commons.wikimedia.org/wiki/User:Rizwan_Rahim_chowdhury">Wikimedia</a>
   </div>
 </footer>
 
@@ -637,7 +725,7 @@ form.addEventListener("submit", async function(e){
   color: #f4b400;
 }
 </style>
-
+<div id="google_translate_element" style="display:none;"></div>
 <script>
 function acceptCookies() {
   localStorage.setItem("cookieAccepted", "true");
@@ -653,41 +741,43 @@ window.onload = function() {
 
 <!-- ===== End Footer Block ===== -->   
 <script src="analytics.js"></script>
+    <script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,bn,hi,ur,ar,fr,es,de,zh-CN,ja',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+
+// Load Google Translate script
+var gtScript = document.createElement('script');
+gtScript.type = 'text/javascript';
+gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+document.head.appendChild(gtScript);
+
+// Hook dropdown to Google Translate
+document.addEventListener('DOMContentLoaded', function() {
+    var select = document.getElementById('translate-select');
+    select.addEventListener('change', function() {
+        var lang = this.value;
+        var frame = document.querySelector('iframe.goog-te-menu-frame');
+        if(frame) {
+            frame.contentWindow.document.querySelector('a[lang="'+lang+'"]').click();
+        } else {
+            // Load Google Translate automatically for first time
+            document.getElementById('google_translate_element').style.display = 'block';
+            setTimeout(function(){
+                var frame = document.querySelector('iframe.goog-te-menu-frame');
+                if(frame){
+                    frame.contentWindow.document.querySelector('a[lang="'+lang+'"]').click();
+                }
+            }, 500);
+        }
+    });
+});
+    </script>
     
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
