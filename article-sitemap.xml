@@ -52,5 +52,52 @@
     <news:title>Chattogram Division – Complete Guide 2026</news:title>
   </news:news>
 </url>
+<url>
+    <loc>https://debatesylhetbd.onrender.com/rajshahi-division.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>DebateSylhetBD</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-18</news:publication_date>
+      <news:title>Rajshahi Division: Complete Encyclopedic Guide</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://debatesylhetbd.onrender.com/rangpur-division.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>DebateSylhetBD</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-18</news:publication_date>
+      <news:title>Rangpur Division: Complete Encyclopedic Guide</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://debatesylhetbd.onrender.com/mymensingh-division.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>DebateSylhetBD</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-18</news:publication_date>
+      <news:title>Mymensingh Division: Complete Encyclopedic Guide</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://debatesylhetbd.onrender.com/barishal-division.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>DebateSylhetBD</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-18</news:publication_date>
+      <news:title>Barishal Division: Complete Encyclopedic Guide</news:title>
+    </news:news>
+  </url>
 
 </urlset>
