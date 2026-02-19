@@ -130,65 +130,92 @@ body{top:0!important;}
 </style>
 </head>
 <body>
-    
-    
-    <!-- ULTRA SEO Internal Navigation -->
-    <!-- MINI ANIMATED INTERNAL MENU -->
-<nav class="mini-menu">
+    <!-- PROFESSIONAL SEO-FRIENDLY NAVIGATION -->
+<nav class="internal-menu" aria-label="Primary Navigation">
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="article.html">Articles</a></li>
-    <li><a href="dhaka.html">Dhaka</a></li>
-    <li><a href="sylhet.html">Sylhet</a></li>
-    <li><a href="chattogram-division.html">Chattogram</a></li>
-    <li><a href="khulna-division.html">Khulna</a></li>
-    <li><a href="debate.html">Debate</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html" title="Home Page">Home</a></li>
+    <li><a href="article.html" title="Latest Articles">Articles</a></li>
+    <li><a href="dhaka.html" title="Dhaka Division Page">Dhaka</a></li>
+    <li><a href="sylhet.html" title="Sylhet Division Page">Sylhet</a></li>
+    <li><a href="chattogram-division.html" title="Chattogram Division Page">Chattogram</a></li>
+    <li><a href="khulna-division.html" title="Khulna Division Page">Khulna</a></li>
+    <li><a href="debate.html" title="Debate Section">Debate</a></li>
+    <li><a href="about.html" title="About DebateSylhetBD">About</a></li>
+    <li><a href="contact.html" title="Contact Us">Contact</a></li>
   </ul>
 </nav>
 
 <style>
-/* MINI ANIMATED MENU */
-.mini-menu {background:#A590E0; display:inline-block; padding:0; margin:10px 0; border-radius:4px; overflow:hidden; font-family:sans-serif;}
-.mini-menu ul {list-style:none; margin:0; padding:0; display:flex;}
-.mini-menu li {margin:0;}
-.mini-menu a {
+/* PROFESSIONAL ULTRA NAVIGATION */
+.internal-menu {
+  background: linear-gradient(135deg,#6f0977,#a590e0);
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  font-family: 'SolaimanLipi', sans-serif;
+  flex-wrap: wrap;
+}
+.internal-menu ul {
+  list-style:none;
+  display:flex;
+  margin:0;
+  padding:0;
+  flex-wrap: wrap;
+}
+.internal-menu li {
+  margin: 0 4px;
+}
+.internal-menu a {
   display:block;
-  padding:20px 10px;  /* tiny height ~10px visually */
-  font-size:10px;
-  line-height:10px;
+  padding: 8px 12px; /* compact but clickable */
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
   text-decoration:none;
-  color:#fff;
-  font-weight:bold;
-  white-space:nowrap;
-  transition: all 0.4s ease;
+  text-align:center;
   position:relative;
+  transition: all 0.3s ease;
+  border-radius:4px;
 }
 
-/* Hover animation */
-.mini-menu a::after {
+/* Underline animation */
+.internal-menu a::after {
   content:"";
   position:absolute;
   left:0;
   bottom:0;
-  width:0%;
   height:2px;
+  width:0%;
   background:#ffdd00;
   transition: width 0.4s ease;
 }
-.mini-menu a:hover::after {width:100%;}
+.internal-menu a:hover::after,
+.internal-menu a:focus::after {
+  width:100%;
+}
 
-/* Color + scale on hover */
-.mini-menu a:hover {
+/* Hover & focus effects */
+.internal-menu a:hover,
+.internal-menu a:focus {
   color:#ffdd00;
-  transform:scale(1.1);
-  background:#005bb5;
-  border-radius:2px;
+  background: rgba(0,91,181,0.85);
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive wrap */
+@media(max-width:768px){
+  .internal-menu ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .internal-menu li {
+    margin: 2px 0;
+  }
 }
 </style>
-    
-
     <!-- Watermark -->
     <div class="watermark">
         <img src="logo.png" alt="বিতর্ক বাংলা">
@@ -197,14 +224,7 @@ body{top:0!important;}
     <!-- Corner logo -->
     <div class="corner-logo">
         <img src="logo.png" alt="বিতর্ক বাংলা"> <a href="admin.html" class="admin-btn">Admin Dashboard</a> 
-
-
-        
     </div>
-
-    
-
-
     <!-- Main content -->
     <div class="container">
         <h1>বিতর্ক বাংলা | বাংলা বিতর্কের বিষয়</h1>
@@ -886,6 +906,7 @@ function closeAd() {
 </body>
 
 </html>
+
 
 
 
