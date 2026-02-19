@@ -14,7 +14,3 @@ Crawl-delay: 1
 User-agent: bingbot
 Allow: /
 
-# Other bots
-User-agent: *
-Crawl-delay: 2
-
