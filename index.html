@@ -130,21 +130,7 @@ body{top:0!important;}
 </style>
 </head>
 <body>
-    <div id="translate-widget">
-    <label for="translate-select">🌐 Translate:</label>
-    <select id="translate-select">
-        <option value="en" selected>English</option>
-        <option value="bn">Bangla</option>
-        <option value="hi">Hindi</option>
-        <option value="ur">Urdu</option>
-        <option value="ar">Arabic</option>
-        <option value="fr">French</option>
-        <option value="es">Spanish</option>
-        <option value="de">German</option>
-        <option value="zh-CN">Chinese</option>
-        <option value="ja">Japanese</option>
-    </select>
-    </div>
+    
     
     <!-- ULTRA SEO Internal Navigation -->
     <!-- MINI ANIMATED INTERNAL MENU -->
@@ -164,12 +150,12 @@ body{top:0!important;}
 
 <style>
 /* MINI ANIMATED MENU */
-.mini-menu {background:#0073e6; display:inline-block; padding:0; margin:10px 0; border-radius:4px; overflow:hidden; font-family:sans-serif;}
+.mini-menu {background:#A590E0; display:inline-block; padding:0; margin:10px 0; border-radius:4px; overflow:hidden; font-family:sans-serif;}
 .mini-menu ul {list-style:none; margin:0; padding:0; display:flex;}
 .mini-menu li {margin:0;}
 .mini-menu a {
   display:block;
-  padding:2px 10px;  /* tiny height ~10px visually */
+  padding:20px 10px;  /* tiny height ~10px visually */
   font-size:10px;
   line-height:10px;
   text-decoration:none;
@@ -637,16 +623,6 @@ form.addEventListener("submit", async function(e){
   <a href="https://commons.wikimedia.org/wiki/User:Rizwan_Rahim_chowdhury">Wikimedia</a>
   </div>
 </footer>
-<script>
-  atOptions = {
-    'key' : '97eaa956c295deb2e507ef43d5611498',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/97eaa956c295deb2e507ef43d5611498/invoke.js"></script>
 <!-- Cookie Consent Banner -->
 <div id="cookie-banner">
   <p>
@@ -739,7 +715,7 @@ form.addEventListener("submit", async function(e){
   color: #f4b400;
 }
 </style>
-<div id="google_translate_element" style="display:none;"></div>
+
 <script>
 function acceptCookies() {
   localStorage.setItem("cookieAccepted", "true");
@@ -755,45 +731,66 @@ window.onload = function() {
 
 <!-- ===== End Footer Block ===== -->   
 <script src="analytics.js"></script>
-    <script type="text/javascript">
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,bn,hi,ur,ar,fr,es,de,zh-CN,ja',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
+    
+    <!-- Sticky Bottom Ad Start -->
+<div id="sticky-ad">
+    <div class="ad-container">
+        <span class="close-ad" onclick="closeAd()">✖</span>
+
+        <script>
+          atOptions = {
+            'key' : '97eaa956c295deb2e507ef43d5611498',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/97eaa956c295deb2e507ef43d5611498/invoke.js"></script>
+
+    </div>
+</div>
+
+<style>
+#sticky-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+    padding: 5px 0;
 }
 
-// Load Google Translate script
-var gtScript = document.createElement('script');
-gtScript.type = 'text/javascript';
-gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-document.head.appendChild(gtScript);
+.ad-container {
+    position: relative;
+    display: inline-block;
+}
 
-// Hook dropdown to Google Translate
-document.addEventListener('DOMContentLoaded', function() {
-    var select = document.getElementById('translate-select');
-    select.addEventListener('change', function() {
-        var lang = this.value;
-        var frame = document.querySelector('iframe.goog-te-menu-frame');
-        if(frame) {
-            frame.contentWindow.document.querySelector('a[lang="'+lang+'"]').click();
-        } else {
-            // Load Google Translate automatically for first time
-            document.getElementById('google_translate_element').style.display = 'block';
-            setTimeout(function(){
-                var frame = document.querySelector('iframe.goog-te-menu-frame');
-                if(frame){
-                    frame.contentWindow.document.querySelector('a[lang="'+lang+'"]').click();
-                }
-            }, 500);
-        }
-    });
-});
-    </script>
-    
+.close-ad {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+</style>
+
+<script>
+function closeAd() {
+    document.getElementById("sticky-ad").style.display = "none";
+}
+</script>
+<!-- Sticky Bottom Ad End -->
 </body>
 
 </html>
+
 
 
