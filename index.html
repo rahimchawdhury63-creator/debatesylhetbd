@@ -108,26 +108,22 @@ body{top:0!important;}
   ]
 }
     </script>
-    <!-- Google Translate -->
+    <!-- SEO BOOST -->
 <meta name="google" content="notranslate">
-<style>
-/* Simple translation dropdown styling */
-#translate-widget {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-family: sans-serif;
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DebateSylhetBD",
+  "url": "https://debatesylhetbd.onrender.com/",
+  "logo": "https://debatesylhetbd.onrender.com/logo.png",
+  "sameAs": []
 }
-#translate-widget select {
-    padding: 5px;
-    font-size: 14px;
-}
-</style>
+</script>
+    
 </head>
 <body>
     <!-- PROFESSIONAL SEO-FRIENDLY NAVIGATION -->
@@ -470,134 +466,11 @@ is a Bangla debate topic website for students in Sylhet, Bangladesh.
   </div>
 
         </footer>
-        <!-- Contact Form Section for DebateSylhetBD -->
-<section id="contact" style="padding:50px 0; background:#f8fafc;">
-  <div style="max-width:700px; margin:0 auto; background:#fff; padding:40px; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1); font-family:Arial, sans-serif;">
-    <h2 style="text-align:center; color:#1e293b; font-size:32px; margin-bottom:30px;">Contact Us</h2>
-
-    <form id="contactForm" style="display:flex; flex-direction:column; gap:20px;">
-      <!-- Floating Label: Name -->
-      <div style="position:relative;">
-        <input type="text" id="name" required style="width:100%; padding:16px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:15px; background:none;">
-        <label for="name" style="position:absolute; left:12px; top:16px; color:#64748b; font-size:14px; pointer-events:none; transition:0.3s;">Full Name</label>
-      </div>
-
-      <!-- Floating Label: Email -->
-      <div style="position:relative;">
-        <input type="email" id="email" required style="width:100%; padding:16px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:15px; background:none;">
-        <label for="email" style="position:absolute; left:12px; top:16px; color:#64748b; font-size:14px; pointer-events:none; transition:0.3s;">Email Address</label>
-      </div>
-
-      <!-- Floating Label: Message -->
-      <div style="position:relative;">
-        <textarea id="message" required style="width:100%; padding:16px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:15px; background:none; resize:none; min-height:150px;"></textarea>
-        <label for="message" style="position:absolute; left:12px; top:16px; color:#64748b; font-size:14px; pointer-events:none; transition:0.3s;">Your Message</label>
-      </div>
-
-      <!-- Checkbox with Logo -->
-      <div style="display:flex; align-items:center; gap:12px; margin-top:10px;">
-        <input type="checkbox" id="notRobot" style="width:22px; height:22px; cursor:pointer; position:relative;">
-        <label for="notRobot" style="display:flex; align-items:center; cursor:pointer; gap:6px;">
-          <img src="https://debatesylhetbd.onrender.com/logo.png" alt="DebateSylhetBD" style="width:20px; height:20px; border-radius:50%;">
-          I'm not a robot
-        </label>
-      </div>
-
-      <!-- Submit Button -->
-      <button type="submit" style="padding:16px; font-size:16px; font-weight:bold; border:none; border-radius:10px; background:#2563eb; color:white; cursor:pointer; transition:0.3s;">Send Message</button>
-
-      <!-- Response Message -->
-      <div id="formResponse" style="text-align:center; font-weight:bold; margin-top:10px;"></div>
-    </form>
-  </div>
-</section>
-
-<script>
-// Floating Labels Animation
-const inputs = document.querySelectorAll("#contactForm input:not([type=checkbox]), #contactForm textarea");
-inputs.forEach(input => {
-  input.addEventListener("focus", () => {
-    input.nextElementSibling.style.top = "-10px";
-    input.nextElementSibling.style.fontSize = "12px";
-    input.nextElementSibling.style.color = "#2563eb";
-  });
-  input.addEventListener("blur", () => {
-    if(input.value === ""){
-      input.nextElementSibling.style.top = "16px";
-      input.nextElementSibling.style.fontSize = "14px";
-      input.nextElementSibling.style.color = "#64748b";
-    }
-  });
-});
-
-// Form Submission with Formspree
-const form = document.getElementById("contactForm");
-const response = document.getElementById("formResponse");
-
-form.addEventListener("submit", async function(e){
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const captcha = document.getElementById("notRobot").checked;
-
-  if(!captcha){
-    response.textContent = "❌ Please verify that you are not a robot";
-    response.style.color = "#dc2626";
-    return;
-  }
-
-  const data = { name, email, message };
-
-  try{
-    const res = await fetch("https://formspree.io/f/xbdargng", {
-      method: "POST",
-      headers: { "Content-Type":"application/json" },
-      body: JSON.stringify(data)
-    });
-
-    if(res.ok){
-      response.textContent = "✅ Your message has been sent successfully!";
-      response.style.color = "#16a34a";
-      form.reset();
-      document.querySelectorAll("#contactForm label").forEach(label => {
-        label.style.top = "16px";
-        label.style.fontSize = "14px";
-        label.style.color = "#64748b";
-      });
-    } else {
-      response.textContent = "❌ Failed to send message. Try again later.";
-      response.style.color = "#dc2626";
-    }
-  } catch(err){
-    response.textContent = "❌ An error occurred. Try again later.";
-    response.style.color = "#dc2626";
-  }
-});
-</script>
-<p>© 2026 debatesylhetbd. All Rights Reserved.</p>
-    
         
     </div>
     
  <!-- ===== DebateSylhetBD Professional Footer + SEO Block ===== -->
 
-<!-- SEO BOOST -->
-<meta name="google" content="notranslate">
-<meta name="robots" content="index, follow, max-image-preview:large">
-
-<!-- Organization Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "DebateSylhetBD",
-  "url": "https://debatesylhetbd.onrender.com/",
-  "logo": "https://debatesylhetbd.onrender.com/logo.png",
-  "sameAs": []
-}
-</script>
 
 <footer class="site-footer">
   <div class="footer-container">
@@ -906,6 +779,7 @@ function closeAd() {
 </body>
 
 </html>
+
 
 
 
