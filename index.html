@@ -264,6 +264,144 @@ body{top:0!important;}
     <p><strong>Email:</strong> rahimchawdhury63@gmail.com</p>
   </div>
 
+    <!-- Mini Trending Articles Section -->
+<section class="mini-trending container my-4">
+  <h3 class="section-title">Trending Articles</h3>
+  <div class="trending-grid">
+
+    <!-- Dhaka -->
+    <a href="dhaka.html" class="trend-card">
+      <img src="https://i.imgur.com/bV5JN7H.jpeg" alt="Dhaka Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Dhaka: Complete Guide</h5>
+        <span class="trend-meta">Feb 15, 2026</span>
+      </div>
+    </a>
+
+    <!-- Sylhet -->
+    <a href="sylhet.html" class="trend-card">
+      <img src="https://i.imgur.com/UOdLFOP.jpeg" alt="Sylhet Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Sylhet: Encyclopedic Study</h5>
+        <span class="trend-meta">Feb 15, 2026</span>
+      </div>
+    </a>
+
+    <!-- Chattogram -->
+    <a href="chattogram-division.html" class="trend-card">
+      <img src="https://i.imgur.com/LN3fA0z.jpeg" alt="Chattogram Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Chattogram: Complete Info</h5>
+        <span class="trend-meta">Feb 17, 2026</span>
+      </div>
+    </a>
+
+    <!-- Khulna -->
+    <a href="khulna-division.html" class="trend-card">
+      <img src="https://i.imgur.com/L1v1zTh.jpeg" alt="Khulna Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Khulna: Complete Guide</h5>
+        <span class="trend-meta">Feb 17, 2026</span>
+      </div>
+    </a>
+
+    <!-- Barishal -->
+    <a href="barishal-division.html" class="trend-card">
+      <img src="https://i.imgur.com/uQsoekq.jpeg" alt="Barishal Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Barishal: Complete Info</h5>
+        <span class="trend-meta">Feb 18, 2026</span>
+      </div>
+    </a>
+
+    <!-- Mymensingh -->
+    <a href="mymensingh-division.html" class="trend-card">
+      <img src="https://i.postimg.cc/BbJBkRYv/maymansingh.webp" alt="Mymensingh Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Mymensingh: Complete Guide</h5>
+        <span class="trend-meta">Feb 18, 2026</span>
+      </div>
+    </a>
+
+    <!-- Rangpur -->
+    <a href="rangpur-division.html" class="trend-card">
+      <img src="https://i.imgur.com/BHfOd6U.jpeg" alt="Rangpur Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Rangpur: Complete Info</h5>
+        <span class="trend-meta">Feb 18, 2026</span>
+      </div>
+    </a>
+
+    <!-- Rajshahi -->
+    <a href="rajshahi-division.html" class="trend-card">
+      <img src="https://i.postimg.cc/qvRqj0r8/1000001631.jpg" alt="Rajshahi Division" loading="lazy">
+      <div class="trend-info">
+        <h5>Rajshahi: Complete Guide</h5>
+        <span class="trend-meta">Feb 18, 2026</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<style>
+/* Mini Trending Grid */
+.mini-trending {
+  font-family: 'Segoe UI', sans-serif;
+}
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #6f0977;
+}
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+  gap: 12px;
+}
+.trend-card {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.trend-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.trend-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.trend-info {
+  padding: 6px 8px;
+}
+.trend-info h5 {
+  font-size: 13px;
+  margin: 2px 0;
+  color: #333;
+}
+.trend-meta {
+  font-size: 11px;
+  color: #666;
+}
+@media (max-width:768px){
+  .trending-grid {
+    grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
+    gap: 10px;
+  }
+  .trend-card img {
+    height: 80px;
+  }
+  .trend-info h5 { font-size:12px; }
+}
+</style>
+
      
 <!-- =================== Footer Section =================== -->
 <footer style="background:#f5f5f5; padding:30px 20px; text-align:center; font-family:Arial, sans-serif;">
@@ -779,6 +917,7 @@ function closeAd() {
 </body>
 
 </html>
+
 
 
 
